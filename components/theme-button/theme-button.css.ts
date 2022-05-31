@@ -2,8 +2,8 @@ import { globalStyle, style } from '@vanilla-extract/css'
 import { vars } from '@/styles'
 
 const button = style({
-  width: vars.spacing[8],
-  height: vars.spacing[8],
+  width: vars.spacing[6],
+  height: vars.spacing[6],
   padding: 0,
   border: 0,
   background: 'none',
