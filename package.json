@@ -1,0 +1,39 @@
+{
+  "name": "pinanek23-personal-site",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "^1.7.1",
+    "@vanilla-extract/next-plugin": "^2.0.2",
+    "next": "12.1.6",
+    "next-themes": "^0.2.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.36",
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "8.16.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.3",
+    "prettier": "^2.6.2",
+    "typescript": "4.7.2",
+    "webpack": "^5.72.1"
+  }
+}
