@@ -20,7 +20,7 @@ function getColorVarName(_value: string | null, path: string[]): string {
   return `color-${name}`
 }
 
-const { color: colorTokens, ...baseTokens } = Tokens
+const { color: colorTokens, breakpoint, ...baseTokens } = Tokens
 
 const baseVars = createGlobalThemeContract({ ...baseTokens }, getBaseVarName)
 createGlobalTheme(':root', baseVars, { ...baseTokens })
@@ -31,6 +31,7 @@ createGlobalTheme(':root.dark', colorVars, colorTokens.dark)
 
 const vars = {
   color: colorVars,
+  breakpoint,
   ...baseVars
 }
 

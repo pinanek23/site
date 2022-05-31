@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { Metadata } from '@/components'
+import { Metadata, NavBar } from '@/components'
+import { classes } from '@/styles'
 
 interface MainLayoutProps {
   children: React.ReactNode
@@ -9,7 +10,10 @@ function MainLayout({ children }: MainLayoutProps) {
   return (
     <>
       <Metadata />
-      {children}
+      <div>
+        <NavBar />
+        <div className={classes.pageSizing}>{children}</div>
+      </div>
     </>
   )
 }

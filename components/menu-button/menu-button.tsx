@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { animated, useSpring } from '@react-spring/web'
+import classnames from 'clsx'
 import * as Styles from './menu-button.css'
 
 interface MenuButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -45,7 +46,7 @@ const springConfig = {
 }
 
 const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(function MenuButton(
-  { isMenuOpened, ...props },
+  { isMenuOpened, className, ...props },
   ref
 ): JSX.Element {
   const [isHovered, setHovered] = React.useState<boolean>(false)
@@ -67,7 +68,7 @@ const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(function
 
   return (
     <button
-      className={Styles.button}
+      className={classnames(Styles.button, className)}
       ref={ref}
       type="button"
       aria-label="Toggle menu"
