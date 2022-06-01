@@ -1,4 +1,6 @@
 const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin')
+const { withContentlayer } = require('next-contentlayer')
+
 const withVanillaExtract = createVanillaExtractPlugin()
 
 /** @type {import('next').NextConfig} */
@@ -7,7 +9,7 @@ const nextConfig = {
 }
 
 const configWithPlugin = () => {
-  const plugins = [withVanillaExtract]
+  const plugins = [withVanillaExtract, withContentlayer]
   return plugins.reduce((config, withPlugin) => withPlugin(config), nextConfig)
 }
 
