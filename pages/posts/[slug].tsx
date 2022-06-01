@@ -10,12 +10,12 @@ interface PostPageProps {
   post: Post
 }
 
-const PostPage: Page<PostPageProps> = ({ post: { title, seoTitle, description, image, imageAlt, body, layout } }) => {
+const PostPage: Page<PostPageProps> = ({ post: { title, seoTitle, description, image, body, layout } }) => {
   const MDXContent = useMDXComponent(body.code)
 
   return (
     <>
-      <Metadata title={title} seoTitle={seoTitle} description={description} image={image} imageAlt={imageAlt} />
+      <Metadata title={title} seoTitle={seoTitle} description={description} image={image.url} imageAlt={image.alt} />
       {layout === 'article' && (
         <ArticleLayout>
           <MDXContent />

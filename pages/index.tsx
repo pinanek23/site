@@ -1,13 +1,7 @@
-import { Metadata } from '@/components'
-import type { NextPage } from 'next'
+import type { Page } from '@/types/next'
 
-const Home: NextPage = () => {
-  return (
-    <>
-      <Metadata />
-      <div>Hi there ❤️</div>
-    </>
-  )
+const HomePage: Page = () => {
+  return <div>Hi there ❤️</div>
 }
 
-export default Home
+export default HomePage
