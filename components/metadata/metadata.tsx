@@ -26,7 +26,7 @@ function Metadata({
   title,
   seoTitle,
   description = "Pinanek23 's personal site",
-  image = '/default-logo',
+  image = 'default-logo.png',
   imageAlt = "Logo of Pinanek23's personal site"
 }: MetadataProps): JSX.Element {
   const router = useRouter()
