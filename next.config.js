@@ -1,5 +1,6 @@
 const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin')
 const { withContentlayer } = require('next-contentlayer')
+const withExportImages = require('next-export-optimize-images')
 
 const withVanillaExtract = createVanillaExtractPlugin()
 
@@ -9,7 +10,7 @@ const nextConfig = {
 }
 
 const configWithPlugin = () => {
-  const plugins = [withVanillaExtract, withContentlayer]
+  const plugins = [withVanillaExtract, withContentlayer, withExportImages]
   return plugins.reduce((config, withPlugin) => withPlugin(config), nextConfig)
 }
 
