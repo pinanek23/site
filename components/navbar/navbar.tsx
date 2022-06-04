@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useTheme } from 'next-themes'
 import classnames from 'clsx'
+import NextLink from 'next/link'
 import Logo from '@/components/logo'
 import NavItem from '@/components/nav-item'
 import ThemeButton from '@/components/theme-button'
@@ -29,7 +30,11 @@ function NavBar(): JSX.Element {
   return (
     <div className={Styles.wrapper}>
       <div className={classnames(Styles.container, classes.pageSizing)}>
-        <Logo className={Styles.logo} />
+        <NextLink href="/" passHref={true}>
+          <a aria-label="Go to Home">
+            <Logo className={Styles.logo} />
+          </a>
+        </NextLink>
         <div className={classnames(Styles.items, isMenuOpened ? Styles.menuOpen : Styles.menuClose)}>
           <div className={Styles.navItems}>
             <NavItem href="/posts">Posts</NavItem>
