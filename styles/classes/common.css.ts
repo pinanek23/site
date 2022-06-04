@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { vars } from './vars.css'
+import { vars } from '@/styles/vars.css'
 
 const pageSizing = style({
   maxWidth: '63rem',
@@ -9,8 +9,4 @@ const pageSizing = style({
   paddingRight: vars.spacing[6]
 })
 
-const classes = {
-  pageSizing
-}
-
-export { classes }
+export { pageSizing }
