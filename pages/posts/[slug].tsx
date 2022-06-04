@@ -26,7 +26,7 @@ const PostPage: Page<PostPageProps> = ({ post: { title, seoTitle, description, i
 }
 
 const getStaticPaths: GetStaticPaths = async () => {
-  const paths: string[] = allPosts.map((post) => post.url)
+  const paths: string[] = allPosts.map(({ slug }) => `/posts/${slug}`)
 
   return {
     paths,

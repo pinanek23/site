@@ -58,11 +58,6 @@ const Post = defineDocumentType(() => ({
     }
   },
   computedFields: {
-    url: {
-      type: 'string',
-      resolve: (post) => `/${post._raw.flattenedPath}`,
-      description: 'URL of a post'
-    },
     slug: {
       type: 'string',
       resolve: (post) => post._raw.sourceFileName.replace(/\.md$/, ''),
