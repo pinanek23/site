@@ -1,12 +1,12 @@
 const font = {
-  sans: 'Cabin, "Segoe UI Variable", "Segoe UI", -apple-system, BlinkMacSystemFont, "ui-sans-serif", sans-serif',
+  sans: '"Lexend Deca", "Segoe UI Variable", "Segoe UI", -apple-system, BlinkMacSystemFont, "ui-sans-serif", sans-serif',
   mono: '"Cascadia Code", "Fira Code", SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", ui-monospace, monospace'
 }
 
 const fontWeight = {
   normal: '400',
   semiBold: '500',
-  bold: '700'
+  bold: '600'
 }
 
 const lineHeight = {

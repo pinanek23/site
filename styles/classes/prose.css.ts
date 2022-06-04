@@ -5,7 +5,6 @@ const prose = style({})
 
 globalStyle(`${prose} p, ul, ol`, {
   margin: '1em 0',
-  fontSize: '1.125rem',
   lineHeight: 'calc(1em + 0.7em)'
 })
 
@@ -22,6 +21,10 @@ globalStyle(`${prose} h3`, {
 globalStyle(`${prose} h4`, {
   margin: '1em 0',
   fontSize: '1.125em'
+})
+
+globalStyle(`${prose} ul, ol`, {
+  paddingInlineStart: '1.75em'
 })
 
 export { prose }

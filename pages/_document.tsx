@@ -4,10 +4,9 @@ function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="prefetch" href="/fonts/CabinVariable.woff2" as="font" type="font/woff2" cross-origin="anonymous" />
         <link
           rel="prefetch"
-          href="/fonts/CabinItalicVariable.woff2"
+          href="/fonts/LexendDecaVariableFont.woff2"
           as="font"
           type="font/woff2"
           cross-origin="anonymous"
