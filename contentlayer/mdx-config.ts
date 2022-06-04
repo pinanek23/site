@@ -1,3 +1,5 @@
+import remarmGfm from 'remark-gfm'
+
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 
@@ -6,6 +8,7 @@ import { s } from 'hastscript'
 import type { MDXOptions } from 'contentlayer/core'
 
 const mdxConfig: MDXOptions = {
+  remarkPlugins: [remarmGfm],
   rehypePlugins: [
     rehypeSlug,
     [
