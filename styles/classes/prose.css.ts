@@ -59,6 +59,7 @@ globalStyle(`${prose} p`, {
   lineHeight: 'calc(1em + 0.75rem)'
 })
 
+// Lists
 globalStyle(`${prose} ul, ol`, {
   margin: '1em 0',
   lineHeight: 'calc(1em + 0.75rem)'

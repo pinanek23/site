@@ -6,6 +6,8 @@ interface ThemeButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   isDarkColorMode: boolean
 }
 
+// https://tablericons.com/
+
 const properties = {
   light: {
     circle: { r: 4 },

@@ -7,6 +7,8 @@ interface MenuButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> 
   isMenuOpened: boolean
 }
 
+// https://tablericons.com/
+
 const properties = {
   normal: {
     line1: { x1: '4', y1: '6', x2: '20', y2: '6' },
