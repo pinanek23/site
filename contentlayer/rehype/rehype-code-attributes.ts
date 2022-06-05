@@ -1,13 +1,12 @@
 import { visit } from 'unist-util-visit'
 import type { Plugin, Transformer } from 'unified'
-import type { Node, Parent } from './types'
+import type { Element, Parent } from 'hast'
+
+const attributesRegex = /\b([-\w]+)(?:=(?:"([^"]*)"|'([^']*)'|([^"'\s]+)))?/g
+const textLang = 'text'
 
 const transformer: Transformer = (tree) => {
-  const attributesRegex = /\b([-\w]+)(?:=(?:"([^"]*)"|'([^']*)'|([^"'\s]+)))?/g
-
   function getLanguage(classNames: string[]): string {
-    const textLang = 'text'
-
     if (classNames === undefined) return textLang
 
     const languageClass = classNames.find((className) => className.startsWith('language-'))
@@ -15,15 +14,19 @@ const transformer: Transformer = (tree) => {
     return languageClass.slice(9)
   }
 
-  visit(tree, 'element', (node: Node, index: number, parent: Parent) => {
+  visit(tree, 'element', (node: Element, index: number, parent: Parent) => {
     if (node.tagName !== 'pre') return
 
-    const codeNode = node.children[0] as Node
+    const codeNode = node.children[0] as Element
+
+    // Ensure nodes properties are initialized
+    if (node.properties === undefined) node.properties = {}
+    if (codeNode.properties === undefined) codeNode.properties = {}
 
     // Code lang
-    const classNames = codeNode.properties['className'] as string[]
+    const classNames = codeNode.properties.className as string[]
     const language = getLanguage(classNames)
-    node.properties['language'] = language
+    node.properties.language = language
 
     // Meta as attributes
     if (codeNode.data !== undefined && codeNode.data.meta !== undefined) {
