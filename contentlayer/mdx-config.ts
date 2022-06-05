@@ -2,11 +2,11 @@
 
 import remarmGfm from 'remark-gfm'
 
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeExternalLinks from 'rehype-external-links'
 import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeCodeAttributes from './rehype/rehype-code-attributes'
 import rehypeCodeHighlight from './rehype/rehype-code-highlight'
-import rehypeExternalLinks from './rehype/rehype-external-links'
 
 import { getHighlighter } from './highlighter'
 import * as HastIcons from './hast-icons'
@@ -19,6 +19,7 @@ async function getMdxConfig(): Promise<MDXOptions> {
   return {
     remarkPlugins: [remarmGfm],
     rehypePlugins: [
+      rehypeExternalLinks,
       rehypeSlug,
       [
         rehypeAutolinkHeadings,
@@ -27,7 +28,7 @@ async function getMdxConfig(): Promise<MDXOptions> {
           content: [HastIcons.linkIcon]
         }
       ],
-      [rehypeExternalLinks, { icon: HastIcons.externalLinkIcon }],
+      rehypeExternalLinks,
       rehypeCodeAttributes,
       [rehypeCodeHighlight, { highlighter }]
     ]

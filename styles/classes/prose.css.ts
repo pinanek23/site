@@ -80,18 +80,16 @@ globalStyle(`${prose} a`, {
   alignItems: 'center',
   gap: vars.spacing[1],
   color: vars.color.accentDefault,
-  textDecoration: 'none',
-  transitionProperty: 'color',
+  borderRadius: vars.radii.md,
+  textDecoration: 'underline',
+  textDecorationColor: 'transparent',
+  transitionProperty: 'color, text-decoration-color',
   transitionDuration: vars.duration.default,
   transitionTimingFunction: vars.ease.inOut
 })
 
 globalStyle(`${prose} a:hover`, {
-  color: vars.color.accentSecondary
-})
-
-globalStyle(`${prose} a:active`, {
-  color: vars.color.accentTertiary
+  textDecorationColor: vars.color.accentDefault
 })
 
 globalStyle(`${prose} a svg`, {
