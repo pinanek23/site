@@ -3,6 +3,8 @@ import { vars } from '@/styles'
 
 const wrapper = style({
   position: 'sticky',
+  top: 0,
+  zIndex: 100,
   backgroundColor: vars.color.pageBackground,
   boxShadow: vars.shadow.sm,
   transitionProperty: 'background-color',
