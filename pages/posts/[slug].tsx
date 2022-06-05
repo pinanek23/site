@@ -2,6 +2,7 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { ArticleLayout } from '@/layouts'
 import { Metadata } from '@/components'
+import { CodeBlock } from '@/components/proses'
 import { allPosts, type Post } from 'contentlayer/generated'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import type { Page } from '@/types/next'
@@ -10,15 +11,19 @@ interface PostPageProps {
   post: Post
 }
 
+const proseComponents = {
+  pre: CodeBlock
+}
+
 const PostPage: Page<PostPageProps> = ({ post: { title, seoTitle, description, image, body, layout } }) => {
-  const MDXContent = useMDXComponent(body.code)
+  const MDXContent = useMDXComponent(body.code || '')
 
   return (
     <>
       <Metadata title={title} seoTitle={seoTitle} description={description} image={image.url} imageAlt={image.alt} />
       {layout === 'article' && (
         <ArticleLayout>
-          <MDXContent />
+          <MDXContent components={{ ...proseComponents }} />
         </ArticleLayout>
       )}
     </>

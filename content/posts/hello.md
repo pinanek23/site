@@ -79,10 +79,10 @@ This is an `Escaping Backticks` with monospace font.
 ### Code blocks
 
 ```
-This is an plain text code block
+This is a plain text code block
 ```
 
-```tsx
+```tsx fileName=code-block.tsx
 import * as React from 'react'
 
 interface Props {
@@ -93,6 +93,24 @@ function CodeBlock({ children }: Props): JSX.Element {
   return (
     <div>
       <h2>This is an code block with syntax highlighting 😍</h2>
+      {children}
+    </div>
+  )
+}
+```
+
+```tsx fileName=code-block.tsx showLineNumbers
+import * as React from 'react'
+
+interface Props {
+  children: React.ReactNode
+}
+
+function CodeBlock({ children }: Props): JSX.Element {
+  return (
+    <div>
+      <h2>
+        This is an code block with syntax highlighting with line numbers 😍
       {children}
     </div>
   )

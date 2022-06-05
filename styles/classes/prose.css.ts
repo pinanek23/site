@@ -78,4 +78,8 @@ globalStyle(`${prose} code`, {
   fontFamily: vars.font.mono
 })
 
+globalStyle(`${prose} pre`, {
+  margin: '1em 0'
+})
+
 export { prose }

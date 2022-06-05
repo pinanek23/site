@@ -1,2 +1,3 @@
 export { Post } from './post'
-export { mdxConfig } from './mdx-config'
+export { getMdxConfig } from './mdx-config'
+export type { SupportedLanguages } from './highlighter'
