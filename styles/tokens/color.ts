@@ -11,7 +11,9 @@ const light = {
 
   accentDefault: '#006adc',
 
-  criticalDefault: '#dc2f02'
+  criticalDefault: '#dc2f02',
+
+  inlineCodeBackground: '#e5e4e9'
 }
 
 const dark: Color = {
@@ -25,7 +27,9 @@ const dark: Color = {
 
   accentDefault: '#d1e6fa',
 
-  criticalDefault: '#fd5d35'
+  criticalDefault: '#fd5d35',
+
+  inlineCodeBackground: '#313131'
 }
 
 const color = {

@@ -82,4 +82,13 @@ globalStyle(`${prose} pre`, {
   margin: '1em 0'
 })
 
+globalStyle(`${prose} code:not(pre code)`, {
+  padding: `${vars.spacing[1]} ${vars.spacing[2]}`,
+  borderRadius: vars.radii.sm,
+  backgroundColor: vars.color.inlineCodeBackground,
+  transitionProperty: 'background-color',
+  transitionDuration: vars.duration.default,
+  transitionTimingFunction: vars.ease.inOut
+})
+
 export { prose }
