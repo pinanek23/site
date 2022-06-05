@@ -22,6 +22,10 @@ publishedDate: 06-01-2022
 
 Hello, this is an example post to test all prose component. And this is an Paragraph, with **Bold**, _Italic_ and **_Bold and Italic_** to test Emphasis 😍😍😍. Scroll down for more prose components ❤️.
 
+## Links
+
+This is a [Normal Link](/), and this is an [External Link](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+
 ## Blockquotes
 
 > This is an Blockquote

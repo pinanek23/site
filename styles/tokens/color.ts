@@ -10,6 +10,8 @@ const light = {
   textHeaderTertiary: '#121212',
 
   accentDefault: '#006adc',
+  accentSecondary: '#067eff',
+  accentTertiary: '#2f93ff',
 
   criticalDefault: '#dc2f02',
 
@@ -26,6 +28,8 @@ const dark: Color = {
   textHeaderTertiary: '#f8f8f8',
 
   accentDefault: '#d1e6fa',
+  accentSecondary: '#067eff',
+  accentTertiary: '#2f93ff',
 
   criticalDefault: '#fd5d35',
 

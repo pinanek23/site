@@ -73,6 +73,36 @@ globalStyle(`${prose} li::marker`, {
   fontWeight: vars.fontWeight.bold
 })
 
+// Link
+globalStyle(`${prose} a`, {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: vars.spacing[1],
+  color: vars.color.accentDefault,
+  textDecoration: 'none',
+  transitionProperty: 'color',
+  transitionDuration: vars.duration.default,
+  transitionTimingFunction: vars.ease.inOut
+})
+
+globalStyle(`${prose} a:hover`, {
+  color: vars.color.accentSecondary
+})
+
+globalStyle(`${prose} a:active`, {
+  color: vars.color.accentTertiary
+})
+
+globalStyle(`${prose} a svg`, {
+  width: '1em',
+  height: '1em',
+  display: 'inline-block',
+  fill: 'none',
+  stroke: 'currentcolor',
+  strokeLinecap: 'round',
+  strokeWidth: 2
+})
+
 // Code
 globalStyle(`${prose} code`, {
   fontFamily: vars.font.mono
