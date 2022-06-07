@@ -1,4 +1,5 @@
 export { default as ProseCodeBlock } from './prose-code-block'
+export { default as ProseBlockquote } from './prose-blockquote'
 export { default as ProseHeading2 } from './prose-heading-2'
 export { default as ProseHeading3 } from './prose-heading-3'
 export { default as ProseHeading4 } from './prose-heading-4'

@@ -3,6 +3,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { ArticleLayout } from '@/layouts'
 import { Metadata } from '@/components'
 import {
+  ProseBlockquote,
   ProseCodeBlock,
   ProseHeading2,
   ProseHeading3,
@@ -25,6 +26,7 @@ interface PostPageProps {
 const proseComponents = {
   pre: ProseCodeBlock,
   inlineCode: ProseInlineCode,
+  blockquote: ProseBlockquote,
   a: ProseLink,
   p: ProseParagraph,
   h2: ProseHeading2,
