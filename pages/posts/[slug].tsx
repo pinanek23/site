@@ -7,6 +7,7 @@ import {
   ProseHeading2,
   ProseHeading3,
   ProseHeading4,
+  ProseImage,
   ProseInlineCode,
   ProseLink,
   ProseOrderedList,
@@ -29,6 +30,7 @@ const proseComponents = {
   h2: ProseHeading2,
   h3: ProseHeading3,
   h4: ProseHeading4,
+  img: ProseImage,
   ol: ProseOrderedList,
   ul: ProseUnorderedList
 }
