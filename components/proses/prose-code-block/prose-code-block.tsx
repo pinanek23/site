@@ -1,9 +1,9 @@
 import * as React from 'react'
 import classnames from 'clsx'
-import * as Styles from './code-block.css'
+import * as Styles from './prose-code-block.css'
 import type { SupportedLanguages } from '@/contentlayer'
 
-interface CodeBlockProps extends React.HTMLAttributes<HTMLPreElement> {
+interface ProseCodeBlockProps extends React.HTMLAttributes<HTMLPreElement> {
   language: SupportedLanguages
   fileName: string
   showLineNumbers?: boolean
@@ -26,16 +26,16 @@ const languageNames: Record<SupportedLanguages, string> = {
   text: 'Text'
 }
 
-function CodeBlock({
+function ProseCodeBlock({
   language,
   fileName,
   showLineNumbers,
   className,
   children,
   ...props
-}: CodeBlockProps): JSX.Element {
+}: ProseCodeBlockProps): JSX.Element {
   return (
-    <pre className={classnames(className, Styles.container, showLineNumbers && Styles.showLineNumbers)} {...props}>
+    <pre className={classnames(Styles.container, showLineNumbers && Styles.showLineNumbers, className)} {...props}>
       <div className={Styles.infoContainer}>
         {fileName && <span>{fileName}</span>}
         <span className={Styles.language}>{languageNames[language]}</span>
@@ -45,4 +45,4 @@ function CodeBlock({
   )
 }
 
-export default CodeBlock
+export default ProseCodeBlock

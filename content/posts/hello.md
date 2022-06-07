@@ -45,32 +45,10 @@ This is an Unordered List:
 - Third item
 - Fourth item
 
-This is an Unordered List with Indented items:
-
-- First item
-  1. Indented item
-  2. Indented item
-- Second item
-  - Indented item
-  - Indented item
-- Third item
-- Fourth item
-
 This is an Ordered List:
 
 1. First item
 2. Second item
-3. Third item
-4. Fourth item
-
-This is an Ordered List with Indented items:
-
-1. First item
-   1. Indented item
-   2. Indented item
-2. Second item
-   - Indented item
-   - Indented item
 3. Third item
 4. Fourth item
 

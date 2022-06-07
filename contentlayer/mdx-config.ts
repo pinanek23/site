@@ -4,12 +4,11 @@ import remarmGfm from 'remark-gfm'
 
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeCodeAttributes from './rehype/rehype-code-attributes'
 import rehypeCodeHighlight from './rehype/rehype-code-highlight'
+import rehypeInlineCode from './rehype/rehype-inline-code'
 
 import { getHighlighter } from './highlighter'
-import * as HastIcons from './hast-icons'
 
 import type { MDXOptions } from 'contentlayer/core'
 
@@ -21,14 +20,8 @@ async function getMdxConfig(): Promise<MDXOptions> {
     rehypePlugins: [
       rehypeExternalLinks,
       rehypeSlug,
-      [
-        rehypeAutolinkHeadings,
-        {
-          properties: { class: 'heading-link', ariaHidden: true, tabIndex: -1 },
-          content: [HastIcons.linkIcon]
-        }
-      ],
       rehypeExternalLinks,
+      rehypeInlineCode,
       rehypeCodeAttributes,
       [rehypeCodeHighlight, { highlighter }]
     ]

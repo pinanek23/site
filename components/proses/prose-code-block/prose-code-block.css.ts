@@ -1,17 +1,19 @@
 import { globalStyle, style } from '@vanilla-extract/css'
 import { vars } from '@/styles'
 
+const container = style({
+  borderRadius: vars.radii.md,
+  overflow: 'hidden',
+  margin: '1.5em 0'
+})
+
 const main = style({
   padding: `${vars.spacing[4]} ${vars.spacing[6]}`,
   overflow: 'auto'
 })
 
-const container = style({
-  borderRadius: vars.radii.md,
-  overflow: 'hidden'
-})
-
 globalStyle(`${main} code`, {
+  fontFamily: vars.font.mono,
   counterReset: 'line-number',
   counterIncrement: 'line-number 0'
 })

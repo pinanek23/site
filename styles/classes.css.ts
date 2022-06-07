@@ -9,4 +9,8 @@ const pageSizing = style({
   paddingRight: vars.spacing[6]
 })
 
-export { pageSizing }
+const classes = {
+  pageSizing
+}
+
+export { classes }

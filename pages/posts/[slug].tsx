@@ -2,7 +2,17 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { ArticleLayout } from '@/layouts'
 import { Metadata } from '@/components'
-import { CodeBlock } from '@/components/proses'
+import {
+  ProseCodeBlock,
+  ProseHeading2,
+  ProseHeading3,
+  ProseHeading4,
+  ProseInlineCode,
+  ProseLink,
+  ProseOrderedList,
+  ProseParagraph,
+  ProseUnorderedList
+} from '@/components/proses'
 import { allPosts, type Post } from 'contentlayer/generated'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import type { Page } from '@/types/next'
@@ -12,7 +22,15 @@ interface PostPageProps {
 }
 
 const proseComponents = {
-  pre: CodeBlock
+  pre: ProseCodeBlock,
+  inlineCode: ProseInlineCode,
+  a: ProseLink,
+  p: ProseParagraph,
+  h2: ProseHeading2,
+  h3: ProseHeading3,
+  h4: ProseHeading4,
+  ol: ProseOrderedList,
+  ul: ProseUnorderedList
 }
 
 const PostPage: Page<PostPageProps> = ({ post: { title, seoTitle, description, image, body, layout } }) => {

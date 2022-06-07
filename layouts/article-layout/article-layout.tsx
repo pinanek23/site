@@ -7,7 +7,7 @@ interface ArticleLayoutProps {
 }
 
 function ArticleLayout({ children }: ArticleLayoutProps) {
-  return <div className={classnames(classes.pageSizing, classes.prose)}>{children}</div>
+  return <div className={classnames(classes.pageSizing)}>{children}</div>
 }
 
 export default ArticleLayout
