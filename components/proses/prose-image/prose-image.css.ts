@@ -3,7 +3,8 @@ import { vars } from '@/styles'
 
 const main = style({
   position: 'relative',
-  width: '100%'
+  width: '100%',
+  margin: '1.5em 0'
 })
 
 globalStyle(`${main} > span`, {

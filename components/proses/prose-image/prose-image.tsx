@@ -6,9 +6,9 @@ type ProseImageProps = NextImageProps
 
 function ProseImage({ ...props }: ProseImageProps): JSX.Element {
   return (
-    <span className={Styles.main}>
+    <div className={Styles.main}>
       <NextImage className={Styles.image} layout="fill" placeholder="blur" {...props} />
-    </span>
+    </div>
   )
 }
 

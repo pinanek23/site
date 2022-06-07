@@ -1,6 +1,7 @@
 /* eslint-disable import/order */
 
 import remarmGfm from 'remark-gfm'
+import remarkUnwrapImages from 'remark-unwrap-images'
 
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeSlug from 'rehype-slug'
@@ -16,7 +17,7 @@ async function getMdxConfig(): Promise<MDXOptions> {
   const highlighter = await getHighlighter()
 
   return {
-    remarkPlugins: [remarmGfm],
+    remarkPlugins: [remarmGfm, remarkUnwrapImages],
     rehypePlugins: [
       rehypeExternalLinks,
       rehypeSlug,
