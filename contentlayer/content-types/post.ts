@@ -21,7 +21,6 @@ const Post = defineDocumentType(() => ({
     },
     image: {
       type: 'nested',
-      required: true,
       of: Image,
       description: 'Thumbnail information'
     },

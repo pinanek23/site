@@ -9,6 +9,8 @@ const light = {
   textHeaderSecondary: '#323232',
   textHeaderTertiary: '#121212',
 
+  textAltDefault: '#e5e4e9',
+
   accentDefault: '#006adc',
   accentSecondary: '#067eff',
   accentTertiary: '#2f93ff',
@@ -18,6 +20,8 @@ const light = {
   successDefault: '#05c793',
 
   alertDefault: '#ffc847',
+
+  categoryItemBackground: '#cce5ff',
 
   inlineCodeBackground: '#e5e4e9',
 
@@ -37,6 +41,8 @@ const dark: Color = {
   textHeaderSecondary: '#e8e8e8',
   textHeaderTertiary: '#f8f8f8',
 
+  textAltDefault: '#c4c5c9',
+
   accentDefault: '#d1e6fa',
   accentSecondary: '#067eff',
   accentTertiary: '#2f93ff',
@@ -46,6 +52,8 @@ const dark: Color = {
   successDefault: '#74fbd7',
 
   alertDefault: '#ffe7ad',
+
+  categoryItemBackground: '#1e2731',
 
   inlineCodeBackground: '#313131',
 

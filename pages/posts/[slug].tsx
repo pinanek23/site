@@ -39,14 +39,20 @@ const proseComponents = {
   ul: ProseUnorderedList
 }
 
-const PostPage: Page<PostPageProps> = ({ post: { title, seoTitle, description, image, body, layout } }) => {
+const PostPage: Page<PostPageProps> = ({ post: { title, seoTitle, description, categories, image, body, layout } }) => {
   const MDXContent = useMDXComponent(body.code || '')
 
   return (
     <>
-      <Metadata title={title} seoTitle={seoTitle} description={description} image={image.url} imageAlt={image.alt} />
+      <Metadata title={title} seoTitle={seoTitle} description={description} image={image?.url} imageAlt={image?.alt} />
       {layout === 'article' && (
-        <ArticleLayout>
+        <ArticleLayout
+          title={title}
+          description={description}
+          categories={categories}
+          image={image?.url}
+          imageAlt={image?.alt}
+        >
           <MDXContent components={{ ...proseComponents }} />
         </ArticleLayout>
       )}
