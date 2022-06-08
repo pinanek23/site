@@ -12,6 +12,7 @@ import rehypeInlineCode from './rehype/rehype-inline-code'
 import { getHighlighter } from './highlighter'
 
 import type { MDXOptions } from 'contentlayer/core'
+import rehypeInfoBar from './rehype/rehype-info-bar'
 
 async function getMdxConfig(): Promise<MDXOptions> {
   const highlighter = await getHighlighter()
@@ -22,6 +23,7 @@ async function getMdxConfig(): Promise<MDXOptions> {
       rehypeExternalLinks,
       rehypeSlug,
       rehypeExternalLinks,
+      rehypeInfoBar,
       rehypeInlineCode,
       rehypeCodeAttributes,
       [rehypeCodeHighlight, { highlighter }]

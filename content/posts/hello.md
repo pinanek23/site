@@ -40,6 +40,20 @@ This is a [Normal Link](/), and this is an [External Link](https://www.youtube.c
 >
 > with Multiple Paragraphs
 
+## InfoBar
+
+> [!info]
+> This is an InfoBar with default variant
+
+> [!success]
+> This is an InfoBar with success variant
+
+> [!warning]
+> This is an InfoBar with warning variant
+
+> [!error]
+> This is an InfoBar with critical variant
+
 ## Lists
 
 This is an Unordered List:

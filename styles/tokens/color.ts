@@ -13,9 +13,19 @@ const light = {
   accentSecondary: '#067eff',
   accentTertiary: '#2f93ff',
 
-  criticalDefault: '#dc2f02',
+  criticalDefault: '#ef233c',
 
-  inlineCodeBackground: '#e5e4e9'
+  successDefault: '#05c793',
+
+  alertDefault: '#ffc847',
+
+  inlineCodeBackground: '#e5e4e9',
+
+  // InfoBar
+  infoBarInfoBackground: '#e6f2ff',
+  infoBarSuccessBackground: '#d7fef4',
+  infoBarWarningBackground: '#fff3d6',
+  infoBarErrorBackground: '#fde7ea'
 }
 
 const dark: Color = {
@@ -31,9 +41,19 @@ const dark: Color = {
   accentSecondary: '#067eff',
   accentTertiary: '#2f93ff',
 
-  criticalDefault: '#fd5d35',
+  criticalDefault: '#f68895',
 
-  inlineCodeBackground: '#313131'
+  successDefault: '#74fbd7',
+
+  alertDefault: '#ffe7ad',
+
+  inlineCodeBackground: '#313131',
+
+  // InfoBar
+  infoBarInfoBackground: '#202428',
+  infoBarSuccessBackground: '#202625',
+  infoBarWarningBackground: '#282622',
+  infoBarErrorBackground: '#272122'
 }
 
 const color = {
