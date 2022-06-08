@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { ArticleLayout } from '@/layouts'
-import { Metadata } from '@/components'
+import { Metadata } from '@/components/common'
 import {
   ProseBlockquote,
   ProseCodeBlock,

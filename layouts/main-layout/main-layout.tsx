@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Metadata, NavBar } from '@/components'
+import { Metadata, NavBar } from '@/components/common'
 
 interface MainLayoutProps {
   children: React.ReactNode
