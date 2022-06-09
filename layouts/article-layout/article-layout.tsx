@@ -1,6 +1,7 @@
 import * as React from 'react'
 import classnames from 'clsx'
 import Image from 'next/image'
+import { getDateString } from '@/utils/date'
 import { CategoryItem, TableOfContent } from '@/components/common'
 import { classes } from '@/styles'
 import * as Styles from './article-layout.css'
@@ -13,9 +14,20 @@ interface ArticleLayoutProps {
   headings: Post['headings']
   image: Post['image']
   children: React.ReactNode
+  publishedDate?: string
+  lastUpdated?: string
 }
 
-function ArticleLayout({ title, description, categories, headings, image, children }: ArticleLayoutProps) {
+function ArticleLayout({
+  title,
+  description,
+  categories,
+  headings,
+  image,
+  publishedDate,
+  lastUpdated,
+  children
+}: ArticleLayoutProps) {
   return (
     <div className={classnames(classes.pageSizing, Styles.container)}>
       <div className={Styles.header}>
@@ -28,6 +40,17 @@ function ArticleLayout({ title, description, categories, headings, image, childr
             </CategoryItem>
           ))}
         </div>
+        {publishedDate && (
+          <div className={Styles.dates}>
+            <span>{getDateString(publishedDate)}</span>
+            {lastUpdated && (
+              <>
+                <span>-</span>
+                <span>Last updated: {getDateString(lastUpdated)}</span>
+              </>
+            )}
+          </div>
+        )}
         {image && (
           <div className={Styles.imageContainer}>
             <Image className={Styles.image} src={image.url} alt={image.alt} placeholder="blur" layout="fill" priority />

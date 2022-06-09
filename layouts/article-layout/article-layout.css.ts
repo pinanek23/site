@@ -27,6 +27,19 @@ const categories = style({
   gap: vars.spacing[3]
 })
 
+const dates = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: vars.spacing[1.5],
+  fontSize: vars.fontSize.lg,
+
+  '@media': {
+    [`${vars.breakpoint.lg}`]: {
+      gap: vars.spacing[3]
+    }
+  }
+})
+
 const imageContainer = style({
   position: 'relative',
   width: '100%',
@@ -70,4 +83,4 @@ const content = style({
   minWidth: 0
 })
 
-export { container, header, categories, imageContainer, image, contentContainer, tableOfContent, content }
+export { container, header, categories, dates, imageContainer, image, contentContainer, tableOfContent, content }

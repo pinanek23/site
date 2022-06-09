@@ -40,7 +40,7 @@ const proseComponents = {
 }
 
 const PostPage: Page<PostPageProps> = ({
-  post: { title, seoTitle, description, categories, headings, image, body, layout }
+  post: { title, seoTitle, description, categories, headings, image, body, layout, publishedDate, lastUpdated }
 }) => {
   const MDXContent = useMDXComponent(body.code || '')
 
@@ -54,6 +54,8 @@ const PostPage: Page<PostPageProps> = ({
           categories={categories}
           headings={headings}
           image={image}
+          publishedDate={publishedDate}
+          lastUpdated={lastUpdated}
         >
           <MDXContent components={{ ...proseComponents }} />
         </ArticleLayout>
