@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css'
 import { vars } from '@/styles/vars.css'
 
 const pageSizing = style({
-  maxWidth: '63rem',
+  maxWidth: '73rem',
   marginLeft: 'auto',
   marginRight: 'auto',
   paddingLeft: vars.spacing[6],

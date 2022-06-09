@@ -2,7 +2,9 @@ lockfileVersion: 5.4
 
 specifiers:
   '@react-spring/web': ^9.4.5
+  '@types/github-slugger': ^1.3.0
   '@types/hast': ^2.3.4
+  '@types/mdast': ^3.0.10
   '@types/node': ^17.0.41
   '@types/react': ^18.0.12
   '@types/react-dom': ^18.0.5
@@ -19,9 +21,11 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-import-resolver-typescript: ^2.7.1
   eslint-plugin-import: ^2.26.0
+  github-slugger: ^1.4.0
   hast-util-to-text: ^3.1.1
   husky: ^8.0.1
   lint-staged: ^12.5.0
+  mdast-util-to-string: ^3.1.0
   next: ^12.1.6
   next-contentlayer: ^0.2.5
   next-export-optimize-images: ^1.4.0
@@ -32,6 +36,7 @@ specifiers:
   rehype-external-links: ^1.0.1
   rehype-parse: ^8.0.4
   rehype-slug: ^5.0.1
+  remark: ^14.0.2
   remark-gfm: ^3.0.1
   remark-unwrap-images: ^3.0.1
   shiki: ^0.10.1
@@ -47,7 +52,9 @@ dependencies:
   '@vanilla-extract/recipes': 0.2.5_@vanilla-extract+css@1.7.1
   clsx: 1.1.1
   contentlayer: 0.2.5_date-fns@2.28.0
+  github-slugger: 1.4.0
   hast-util-to-text: 3.1.1
+  mdast-util-to-string: 3.1.0
   next: 12.1.6_ef5jwxihqo6n7gxfmzogljlgcm
   next-contentlayer: 0.2.5_2mgcgz5qhsdxw4fgpqzqeafmkq
   next-themes: 0.2.0_2mgcgz5qhsdxw4fgpqzqeafmkq
@@ -56,6 +63,7 @@ dependencies:
   rehype-external-links: 1.0.1
   rehype-parse: 8.0.4
   rehype-slug: 5.0.1
+  remark: 14.0.2
   remark-gfm: 3.0.1
   remark-unwrap-images: 3.0.1
   shiki: 0.10.1
@@ -63,7 +71,9 @@ dependencies:
   unist-util-visit: 4.1.0
 
 devDependencies:
+  '@types/github-slugger': 1.3.0
   '@types/hast': 2.3.4
+  '@types/mdast': 3.0.10
   '@types/node': 17.0.41
   '@types/react': 18.0.12
   '@types/react-dom': 18.0.5
@@ -828,6 +838,10 @@ packages:
     resolution: {integrity: sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==}
     dev: false
 
+  /@types/github-slugger/1.3.0:
+    resolution: {integrity: sha512-J/rMZa7RqiH/rT29TEVZO4nBoDP9XJOjnbbIofg7GQKs4JIduEO3WLpte+6WeUz/TcrXKlY+bM7FYrp8yFB+3g==}
+    dev: true
+
   /@types/hast/2.3.4:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}
     dependencies:
@@ -848,7 +862,6 @@ packages:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
       '@types/unist': 2.0.6
-    dev: false
 
   /@types/mdurl/1.0.2:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
@@ -4735,6 +4748,14 @@ packages:
       unified: 10.1.2
     dev: false
 
+  /remark-stringify/10.0.2:
+    resolution: {integrity: sha512-6wV3pvbPvHkbNnWB0wdDvVFHOe1hBRAx1Q/5g/EpH4RppAII6J8Gnwe7VbHuXaoKIF6LAg6ExTel/+kNqSQ7lw==}
+    dependencies:
+      '@types/mdast': 3.0.10
+      mdast-util-to-markdown: 1.3.0
+      unified: 10.1.2
+    dev: false
+
   /remark-unwrap-images/3.0.1:
     resolution: {integrity: sha512-5VUY0n+J9lPTPfkct5S3/SbutryBjp8J/4mbgtlkDrOk3h8jde0hyqdYUJOoJKherZezS08tjd6i4+nnQ+wl5w==}
     dependencies:
@@ -4742,6 +4763,17 @@ packages:
       hast-util-whitespace: 2.0.0
       unified: 10.1.2
       unist-util-visit: 4.1.0
+    dev: false
+
+  /remark/14.0.2:
+    resolution: {integrity: sha512-A3ARm2V4BgiRXaUo5K0dRvJ1lbogrbXnhkJRmD0yw092/Yl0kOCZt1k9ZeElEwkZsWGsMumz6qL5MfNJH9nOBA==}
+    dependencies:
+      '@types/mdast': 3.0.10
+      remark-parse: 10.0.1
+      remark-stringify: 10.0.2
+      unified: 10.1.2
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /repeat-string/1.6.1:

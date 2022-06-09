@@ -7,7 +7,8 @@ const main = style({
   fontSize: '1.125em',
   transitionProperty: 'color',
   transitionDuration: vars.duration.default,
-  transitionTimingFunction: vars.ease.inOut
+  transitionTimingFunction: vars.ease.inOut,
+  scrollMarginTop: vars.spacing[28]
 })
 
 export { main }

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import classnames from 'clsx'
 import Image from 'next/image'
-import { CategoryItem, Separator } from '@/components/common'
+import { CategoryItem, TableOfContent } from '@/components/common'
 import { classes } from '@/styles'
 import * as Styles from './article-layout.css'
 
@@ -9,12 +9,13 @@ interface ArticleLayoutProps {
   title: string
   description: string
   categories: string[]
+  headings: Array<{ id: string; level: number; content: string }>
   image?: string
   imageAlt?: string
   children: React.ReactNode
 }
 
-function ArticleLayout({ title, description, categories, image, imageAlt, children }: ArticleLayoutProps) {
+function ArticleLayout({ title, description, categories, headings, image, imageAlt, children }: ArticleLayoutProps) {
   return (
     <div className={classnames(classes.pageSizing, Styles.container)}>
       <div className={Styles.header}>
@@ -33,8 +34,10 @@ function ArticleLayout({ title, description, categories, image, imageAlt, childr
           </div>
         )}
       </div>
-      <Separator className={Styles.separator} />
-      <div>{children}</div>
+      <div id="article-content-container" className={Styles.contentContainer}>
+        <TableOfContent headings={headings} className={Styles.tableOfContent} />
+        <div className={Styles.content}>{children}</div>
+      </div>
     </div>
   )
 }

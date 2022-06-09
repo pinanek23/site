@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
 import { defineDocumentType } from 'contentlayer/source-files'
+import { remark } from 'remark'
+import remarkHeadings from '../remark/remark-headings'
 import { Image } from './image'
 
 const postCategories = ['Hello', 'Nothing']
@@ -61,6 +63,14 @@ const Post = defineDocumentType(() => ({
       type: 'string',
       resolve: (post) => post._raw.sourceFileName.replace(/\.md$/, ''),
       description: 'Use to find a post in getStaticProps 😖'
+    },
+    headings: {
+      type: 'Array<{ id: string; level: number; content: string}>' as 'list',
+      description: 'All headings of this post 😜',
+      resolve: async (doc) => {
+        const file = await remark().use(remarkHeadings).process(doc.body.raw)
+        return file.data.headings
+      }
     }
   }
 }))

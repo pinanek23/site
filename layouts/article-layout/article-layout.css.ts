@@ -45,8 +45,29 @@ const image = style({
   borderRadius: vars.radii.lg
 })
 
-const separator = style({
-  margin: vars.spacing[4]
+const contentContainer = style({
+  display: 'flex',
+  alignItems: 'flex-start',
+  flexDirection: 'column',
+  marginTop: vars.spacing[4],
+  marginBottom: vars.spacing[4],
+
+  '@media': {
+    [`${vars.breakpoint.lg}`]: {
+      flexDirection: 'row-reverse',
+      gap: vars.spacing[16]
+    }
+  }
 })
 
-export { container, header, categories, imageContainer, image, separator }
+const tableOfContent = style({
+  flexGrow: 1,
+  flexShrink: 0
+})
+
+const content = style({
+  width: '100%',
+  minWidth: 0
+})
+
+export { container, header, categories, imageContainer, image, contentContainer, tableOfContent, content }

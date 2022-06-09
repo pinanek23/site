@@ -3,6 +3,10 @@ import { vars } from '@/styles/vars.css'
 import './reset.css'
 import './typography.css'
 
+globalStyle('html', {
+  scrollBehavior: 'smooth'
+})
+
 globalStyle('body', {
   color: vars.color.textDefault,
   backgroundColor: vars.color.pageBackground,
