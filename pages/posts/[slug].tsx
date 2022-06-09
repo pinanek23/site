@@ -53,8 +53,7 @@ const PostPage: Page<PostPageProps> = ({
           description={description}
           categories={categories}
           headings={headings}
-          image={image?.url}
-          imageAlt={image?.alt}
+          image={image}
         >
           <MDXContent components={{ ...proseComponents }} />
         </ArticleLayout>

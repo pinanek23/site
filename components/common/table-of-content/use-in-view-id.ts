@@ -3,12 +3,13 @@ import { useRouter } from 'next/router'
 
 // https://blog.eyas.sh/2022/03/react-toc
 
-function useInViewId(selectors: string) {
-  const [inViewId, setInViewId] = React.useState<string | undefined>()
-
+function useInViewId(selectors: string, setItem: React.Dispatch<React.SetStateAction<string>>) {
   const router = useRouter()
 
   React.useEffect(() => {
+    const articleContainer = document.getElementById('article-content-container')
+    if (articleContainer === null) return
+
     const inViewSet = new Map<string, HTMLElement>()
 
     const callback: IntersectionObserverCallback = (entries) => {
@@ -23,7 +24,7 @@ function useInViewId(selectors: string) {
       const inView = Array.from(inViewSet.entries())
 
       if (inView.length > 0) {
-        setInViewId(inView[inView.length - 1][0])
+        setItem(inView[inView.length - 1][0])
       }
     }
 
@@ -32,7 +33,7 @@ function useInViewId(selectors: string) {
       rootMargin: '-112px 0px -70% 0px'
     })
 
-    document.querySelectorAll(selectors).forEach((element) => {
+    articleContainer.querySelectorAll(selectors).forEach((element) => {
       observer.observe(element)
     })
 
@@ -40,8 +41,6 @@ function useInViewId(selectors: string) {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath])
-
-  return { inViewId }
 }
 
 export default useInViewId

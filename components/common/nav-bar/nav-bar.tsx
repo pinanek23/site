@@ -3,11 +3,11 @@ import { useTheme } from 'next-themes'
 import classnames from 'clsx'
 import NextLink from 'next/link'
 import Logo from '@/components/common/logo'
-import NavItem from '@/components/common/nav-item'
 import ThemeButton from '@/components/common/theme-button'
 import MenuButton from '@/components/common/menu-button'
 import { classes } from '@/styles'
-import * as Styles from './navbar.css'
+import NavItem from './nav-item'
+import * as Styles from './nav-bar.css'
 
 function NavBar(): JSX.Element {
   const [isThemeReady, setThemeReady] = React.useState(false)

@@ -13,4 +13,10 @@ const lineHeight = {
   default: 'calc(1em + 0.5rem)'
 }
 
-export { font, fontWeight, lineHeight }
+const fontSize = {
+  sm: '0.9375rem',
+  md: '1rem',
+  lg: '1.125rem'
+}
+
+export { font, fontWeight, fontSize, lineHeight }

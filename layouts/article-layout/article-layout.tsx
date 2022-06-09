@@ -4,18 +4,18 @@ import Image from 'next/image'
 import { CategoryItem, TableOfContent } from '@/components/common'
 import { classes } from '@/styles'
 import * as Styles from './article-layout.css'
+import type { Post } from 'contentlayer/generated'
 
 interface ArticleLayoutProps {
   title: string
   description: string
   categories: string[]
-  headings: Array<{ id: string; level: number; content: string }>
-  image?: string
-  imageAlt?: string
+  headings: Post['headings']
+  image: Post['image']
   children: React.ReactNode
 }
 
-function ArticleLayout({ title, description, categories, headings, image, imageAlt, children }: ArticleLayoutProps) {
+function ArticleLayout({ title, description, categories, headings, image, children }: ArticleLayoutProps) {
   return (
     <div className={classnames(classes.pageSizing, Styles.container)}>
       <div className={Styles.header}>
@@ -30,7 +30,7 @@ function ArticleLayout({ title, description, categories, headings, image, imageA
         </div>
         {image && (
           <div className={Styles.imageContainer}>
-            <Image className={Styles.image} src={image} alt={imageAlt} placeholder="blur" layout="fill" priority />
+            <Image className={Styles.image} src={image.url} alt={image.alt} placeholder="blur" layout="fill" priority />
           </div>
         )}
       </div>
