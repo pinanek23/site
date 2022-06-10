@@ -211,7 +211,7 @@ packages:
       chokidar: 3.5.3
       hash-wasm: 4.9.0
       inflection: 1.13.2
-      oo-ascii-tree: 1.60.0
+      oo-ascii-tree: 1.60.1
       ts-pattern: 4.0.3
       type-fest: 2.13.0
     dev: false
@@ -392,7 +392,7 @@ packages:
     dependencies:
       '@mdx-js/mdx': 2.1.1
       esbuild: 0.14.43
-      node-fetch: 3.2.5
+      node-fetch: 3.2.6
       vfile: 5.3.2
     transitivePeerDependencies:
       - supports-color
@@ -1516,7 +1516,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001352
-      electron-to-chromium: 1.4.150
+      electron-to-chromium: 1.4.151
       escalade: 3.1.1
       node-releases: 2.0.5
       picocolors: 1.0.0
@@ -1913,8 +1913,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium/1.4.150:
-    resolution: {integrity: sha512-MP3oBer0X7ZeS9GJ0H6lmkn561UxiwOIY9TTkdxVY7lI9G6GVCKfgJaHaDcakwdKxBXA4T3ybeswH/WBIN/KTA==}
+  /electron-to-chromium/1.4.151:
+    resolution: {integrity: sha512-XaG2LpZi9fdiWYOqJh0dJy4SlVywCvpgYXhzOlZTp4JqSKqxn5URqOjbm9OMYB3aInA2GuHQiem1QUOc1yT0Pw==}
     dev: false
 
   /emoji-regex/8.0.0:
@@ -4263,8 +4263,8 @@ packages:
     engines: {node: '>=10.5.0'}
     dev: false
 
-  /node-fetch/3.2.5:
-    resolution: {integrity: sha512-u7zCHdJp8JXBwF09mMfo2CL6kp37TslDl1KP3hRGTlCInBtag+UO3LGVy+NF0VzvnL3PVMpA2hXh1EtECFnyhQ==}
+  /node-fetch/3.2.6:
+    resolution: {integrity: sha512-LAy/HZnLADOVkVPubaxHDft29booGglPFDr2Hw0J1AercRh01UiVFm++KMDnJeH9sHgNB4hsXPii7Sgym/sTbw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       data-uri-to-buffer: 4.0.0
@@ -4358,8 +4358,8 @@ packages:
       mimic-fn: 2.1.0
     dev: true
 
-  /oo-ascii-tree/1.60.0:
-    resolution: {integrity: sha512-mMkGJNJgJjlO8UMkHYAJuVnYBfljC02FQlsBYFM0tYTTN/RMVbN9Y7mA7FXrrv9u87+npSU6xjITUcZL9OVTew==}
+  /oo-ascii-tree/1.60.1:
+    resolution: {integrity: sha512-wNQHcst1PiXbLpilK9xksWAPwHIF8G9qx4NhwucqOubK7jIXEngOhu6mxbWInkPh1L0i+DNgnd2/KBIPNQC6jQ==}
     engines: {node: '>= 14.5.0'}
     dev: false
 
