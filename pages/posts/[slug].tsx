@@ -65,7 +65,7 @@ const PostPage: Page<PostPageProps> = ({
 }
 
 const getStaticPaths: GetStaticPaths = async () => {
-  const paths: string[] = allPosts.map(({ slug }) => `/posts/${slug}`)
+  const paths: string[] = allPosts.filter(({ isPublished }) => isPublished).map(({ slug }) => `/posts/${slug}`)
 
   return {
     paths,
