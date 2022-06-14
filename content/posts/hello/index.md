@@ -4,7 +4,7 @@ seoTitle: Hello
 description: Just an example post 😎
 categories: ['Hello', 'Nothing']
 image:
-  url: /default-logo.png
+  url: thumbnail.png
   alt: Logo of pinanek23
 isPublished: true
 publishedDate: 06-01-2022
@@ -29,7 +29,7 @@ This is a [Normal Link](/), and this is an [External Link](https://www.youtube.c
 
 ## Images
 
-![Hello](/default-logo.png)
+![Hello](rick.jpg)
 
 ## Blockquotes
 
