@@ -30,7 +30,7 @@ function useInViewId(selectors: string, setItem: React.Dispatch<React.SetStateAc
 
     const observer = new IntersectionObserver(callback, {
       threshold: 1,
-      rootMargin: '-112px 0px -70% 0px'
+      rootMargin: '-112px 0px -75% 0px'
     })
 
     articleContainer.querySelectorAll(selectors).forEach((element) => {
