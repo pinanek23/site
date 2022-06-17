@@ -1,5 +1,5 @@
 import * as React from 'react'
-import HeadingLink from '@/components/proses/heading-link'
+import HeadingLink from '@/contentlayer/components/heading-link'
 import * as Styles from './prose-heading-4.css'
 
 type ProseHeading4Props = React.HTMLAttributes<HTMLHeadingElement>
