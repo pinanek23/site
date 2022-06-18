@@ -21,7 +21,7 @@ const light = {
 
   alertDefault: '#ffc847',
 
-  categoryItemBackground: '#cce5ff',
+  categoryItemBackground: '#e6f2ff',
 
   inlineCodeBackground: '#e5e4e9',
 

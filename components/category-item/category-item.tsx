@@ -28,7 +28,7 @@ function CategoryItem({ href, children, ...props }: CategoryItemProps): JSX.Elem
   }
 
   return (
-    <NextLink href={href}>
+    <NextLink href={href} passHref={true}>
       <animated.a
         className={Styles.main}
         style={scaleSpring}
