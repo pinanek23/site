@@ -14,7 +14,7 @@ import ProseOrderedList from '../prose-ordered-list'
 import ProseUnorderedList from '../prose-unordered-list'
 
 interface MDXContentProps {
-  code: string
+  content: string
 }
 
 const proseComponents = {
@@ -32,8 +32,8 @@ const proseComponents = {
   ul: ProseUnorderedList
 }
 
-function MDXContent({ code }: MDXContentProps): JSX.Element {
-  const MDXComponent = useMDXComponent(code || '')
+function MDXContent({ content }: MDXContentProps): JSX.Element {
+  const MDXComponent = useMDXComponent(content || '')
 
   return <MDXComponent components={{ ...proseComponents }} />
 }

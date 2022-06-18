@@ -1,8 +1,8 @@
 import * as React from 'react'
 import classnames from 'clsx'
-import PostHeader, { type PostHeaderProps } from '@/layouts/post-header'
 import { TableOfContent } from '@/components'
 import { classes } from '@/styles'
+import PostHeader, { type PostHeaderProps } from './post-header'
 import * as Styles from './article-layout.css'
 import type { Post } from 'contentlayer/generated'
 

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import PostHeader, { type PostHeaderProps } from '@/layouts/post-header'
+import PostHeader, { type PostHeaderProps } from './post-header'
 import * as Styles from './blog-layout.css'
 
 interface BlogLayoutProps {

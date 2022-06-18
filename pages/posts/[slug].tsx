@@ -1,4 +1,4 @@
-import { ArticleLayout, BlogLayout } from '@/layouts'
+import { PostLayout } from '@/layouts'
 import { Metadata } from '@/components'
 import { MDXContent } from '@/contentlayer/components'
 import { allPosts, type Post } from 'contentlayer/generated'
@@ -12,21 +12,16 @@ interface PostPageProps {
 const PostPage: Page<PostPageProps> = ({
   post: { title, seoTitle, description, categories, headings, image, body, layout, publishedDate, lastUpdated }
 }) => {
-  const header = { title, categories, description, image, publishedDate, lastUpdated }
-
   return (
     <>
-      <Metadata title={title} seoTitle={seoTitle} description={description} image={image?.url} imageAlt={image?.alt} />
-      {layout === 'article' && (
-        <ArticleLayout header={header} headings={headings}>
-          <MDXContent code={body.code} />
-        </ArticleLayout>
-      )}
-      {layout === 'blog' && (
-        <BlogLayout header={header}>
-          <MDXContent code={body.code} />
-        </BlogLayout>
-      )}
+      <Metadata title={title} seoTitle={seoTitle} description={description} image={image} />
+      <PostLayout
+        type={layout}
+        header={{ title, categories, description, image, publishedDate, lastUpdated }}
+        headings={headings}
+      >
+        <MDXContent content={body.code} />
+      </PostLayout>
     </>
   )
 }
