@@ -1,0 +1,11 @@
+@use 'abstracts/variables';
+@use 'base/reset';
+@use 'base/typography';
+
+body {
+  color: var(--color-text-default);
+  background-color: var(--color-page-background);
+  transition: background-color;
+  transition-duration: var(--duration-default);
+  transition-timing-function: var(--ease-in-out);
+}

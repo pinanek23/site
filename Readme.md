@@ -1,6 +1,6 @@
 # pinanek23's personal site
 
-This is my personal site, using [Next.js](https://nextjs.org), [Contentlayer](https://www.contentlayer.dev), and [vanilla-extract](https://vanilla-extract.style)
+This is my personal site, using [Astro](https://astro.build), [SolidJS](https://www.solidjs.com) and [SCSS](https://sass-lang.com)
 
 **WIP** btw 😎
 

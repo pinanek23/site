@@ -1,0 +1,52 @@
+:root {
+  // Typography
+  --font-sans: 'Lexend Deca', 'Segoe UI Variable', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'ui-sans-serif',
+    sans-serif;
+  --font-mono: 'Cascadia Code', 'Fira Code', SFMono-Regular, Menlo, Monaco, Consolas, 'Courier New', ui-monospace,
+    monospace;
+
+  --font-weight-normal: 400;
+  --font-weight-semi: 500;
+  --font-weight-bold: 700;
+
+  // Transitions
+  --duration-fast: 0.15s;
+  --duration-default: 0.3s;
+
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+// Colors
+:root {
+  --color-page-background: #f9f9f9;
+
+  // Text
+  --color-text-default: #121212;
+
+  --color-text-header-default: #626262;
+  --color-text-header-secondary: #323232;
+  --color-text-header-tertiary: #121212;
+
+  // Accent
+  --color-accent-default: #006adc;
+
+  --color-critical-default: #ef233c;
+}
+
+:root.dark {
+  --color-page-background: #212121;
+
+  // Text
+  --color-text-default: #e8e8e8;
+
+  --color-text-header-default: #626262;
+  --color-text-header-secondary: #323232;
+  --color-text-header-tertiary: #121212;
+
+  // Accent
+  --color-accent-default: #d1e6fa;
+
+  --color-critical-default: #f68895;
+}
