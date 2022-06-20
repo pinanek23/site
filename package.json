@@ -47,7 +47,7 @@
     "@types/react-dom": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
-    "eslint": "^8.17.0",
+    "eslint": "^8.18.0",
     "eslint-config-next": "^12.1.6",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^2.7.1",
@@ -56,6 +56,6 @@
     "lint-staged": "^13.0.2",
     "next-export-optimize-images": "^1.5.1",
     "prettier": "^2.7.1",
-    "typescript": "^4.7.3"
+    "typescript": "^4.7.4"
   }
 }
