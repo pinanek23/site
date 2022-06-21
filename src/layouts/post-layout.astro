@@ -1,0 +1,22 @@
+---
+import type { PostFrontMatter } from '@/types/post'
+
+export type Props = PostFrontMatter
+
+const { isShowToc } = Astro.props as Props
+---
+
+<div class:list={['content-spacing', 'content', isShowToc ? 'content-sizing' : 'content-without-toc']}>
+  <slot />
+</div>
+
+<style lang="scss">
+  .content {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .content-without-toc {
+    max-width: 53rem;
+  }
+</style>

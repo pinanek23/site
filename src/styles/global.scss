@@ -10,10 +10,13 @@ body {
   transition-timing-function: var(--ease-in-out);
 }
 
-.page-sizing {
-  max-width: 73rem;
+.content-spacing {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.content-sizing {
+  max-width: 73rem;
 }

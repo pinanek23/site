@@ -1,0 +1,44 @@
+---
+import MainLayout from '@/layouts/main-layout.astro'
+import PostLayout from '@/layouts/post-layout.astro'
+import type { MarkdownInstance } from 'astro'
+import type { PostFrontMatter } from '@/types/post'
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob<PostFrontMatter>('/data/posts/{*,**/index}.md')
+
+  return posts.map((post) => {
+    const match = post.file.match(/(.+)\/index.md$/)
+    const slug = (match === null ? post.file.replace(/\.md$/, '') : match[1]).split(/[/\\]/).pop()
+
+    return {
+      params: { slug },
+      props: {
+        Content: post.Content,
+        frontmatter: {
+          ...post.frontmatter,
+          isShowToc: post.frontmatter.isShowToc ?? true
+        }
+      }
+    }
+  })
+}
+
+type Props = Pick<MarkdownInstance<PostFrontMatter>, 'Content' | 'frontmatter'>
+
+const { Content, frontmatter } = Astro.props as Props
+---
+
+<MainLayout
+  head={{
+    title: frontmatter.title,
+    seoTitle: frontmatter.seoTitle,
+    description: frontmatter.description,
+    imageSrc: frontmatter.image.url,
+    imageAlt: frontmatter.image.alt
+  }}
+>
+  <PostLayout {...frontmatter}>
+    <Content />
+  </PostLayout>
+</MainLayout>
