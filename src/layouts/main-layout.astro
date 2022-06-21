@@ -1,6 +1,7 @@
 ---
 import HeadSEO, { type Props as HeadSEOProps } from '@/components/head/head-seo.astro'
 import HeadCommon from '@/components/head/head-common.astro'
+import Header from '@/components/header/header.astro'
 import '@/styles/global.scss'
 
 export interface Props {
@@ -16,6 +17,7 @@ const { head } = Astro.props as Props
     <HeadSEO {...head} />
   </head>
   <body id="__root">
+    <Header />
     <slot />
   </body>
 </html>
