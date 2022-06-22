@@ -1,24 +1,29 @@
 ---
-import TableOfContent from '@/components/right-sidebar/table-of-content'
+import TableOfContent from '@/components/post/table-of-content'
+import PostHeader from '@/components/post/post-header.astro'
 import type { PostFrontMatter, PostHeaders } from '@/types/post'
+import { getDateString } from '@/utils/date'
 
 export interface Props extends PostFrontMatter {
   headers?: PostHeaders
 }
 
-const { headers } = Astro.props as Props
+const { headers, ...fronmatter } = Astro.props as Props
 ---
 
 <div
   class:list={[
     'content-container-spacing',
     'content-container',
-    headers !== undefined ? ['content-container-sizing', 'content-toc'] : 'content-without-toc'
+    headers !== undefined ? ['content-container-sizing'] : 'content-without-toc'
   ]}
 >
-  {headers !== undefined && <TableOfContent client:load headers={headers} class="toc" />}
-  <div class='content' id='post-content'>
-    <slot></slot>
+  <PostHeader {...fronmatter} />
+  <div class:list={[headers !== undefined && 'content-toc', 'content-wrapper']}>
+    {headers !== undefined && <TableOfContent client:load headers={headers} class="toc" />}
+    <div class='content' id='post-content'>
+      <slot></slot>
+    </div>
   </div>
 </div>
 
@@ -51,6 +56,12 @@ const { headers } = Astro.props as Props
   .toc {
     flex-grow: 1;
     flex-shrink: 0;
+    margin-top: 1.75rem;
+  }
+
+  .content-wrapper {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .content {
