@@ -27,7 +27,7 @@ const { title, description, publishedDate, lastUpdated, image, categories } = As
     </div>
   )}
 
-  <Picture src={image.url} alt={image.alt} loading='lazy' placeholder='blurred' />
+  <Picture src={image.url} alt={image.alt} loading='eager' placeholder='blurred' />
 </div>
 
 <style>
