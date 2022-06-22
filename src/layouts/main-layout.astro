@@ -16,8 +16,10 @@ const { head } = Astro.props as Props
     <HeadCommon />
     <HeadSEO {...head} />
   </head>
-  <body id="__root">
-    <Header />
-    <slot />
+  <body>
+    <div id="__root">
+      <Header />
+      <slot />
+    </div>
   </body>
 </html>
