@@ -22,14 +22,14 @@ const { isShowToc } = Astro.props as Props
     --paragraph-line-height: calc(1em + 0.75rem);
   }
 
-  // Transition
+  /* Transition */
   .content :global(p, h2, h3, h4, a, blockquote, li, code:not(pre > code)) {
     transition-property: color;
     transition-duration: var(--duration-default);
     transition-timing-function: var(--ease-in-out);
   }
 
-  // Headings
+  /* Headings */
   .content :global(h2, h3, h4) {
     position: relative;
   }
@@ -49,14 +49,39 @@ const { isShowToc } = Astro.props as Props
     font-size: 1.125em;
   }
 
-  // Paragraphs
+  // Headings link
+  .content :global(.heading-link) {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition-property: opacity;
+    color: var(--color-text-default);
+  }
+
+  .content :global(:where(h2, h3, h4):hover .heading-link) {
+    opacity: 1;
+  }
+
+  .content :global(.heading-link > svg) {
+    fill: none;
+  }
+
+  .content :global(.heading-link > svg > path) {
+    fill: var(--color-text-default);
+  }
+
+  /* Paragraphs */
   .content :global(p) {
     margin: 1em 0;
     line-height: var(--paragraph-line-height);
   }
 
-  // Links
-  .content :global(a) {
+  /* Links */
+  .content :global(a:not(.heading-link)) {
     display: inline-flex;
     align-items: center;
     gap: 0.25em;
@@ -70,7 +95,7 @@ const { isShowToc } = Astro.props as Props
     }
   }
 
-  // Images
+  /* Images */
   .content :global(img) {
     border-radius: var(--radii-md);
   }
@@ -79,13 +104,7 @@ const { isShowToc } = Astro.props as Props
     border-radius: var(--radii-md);
   }
 
-  // Lists
-  .content :global(ul, ol) {
-    margin: 1em 0;
-    line-height: var(--paragraph-line-height);
-  }
-
-  // Blockquotes
+  /* Blockquotes */
   .content :global(blockquote) {
     margin: '1em 0';
     font-style: italic;
@@ -94,20 +113,20 @@ const { isShowToc } = Astro.props as Props
     transition-property: border-color;
   }
 
+  /* Lists */
+  .content :global(ul, ol) {
+    margin: 1em 0;
+    line-height: var(--paragraph-line-height);
+  }
+
   // Ordered lists
   .content :global(ol li::marker) {
     font-weight: var(--font-weight-bold);
   }
 
-  // Code
+  /* Code */
   .content :global(code) {
     font-family: var(--font-mono);
-  }
-
-  .content :global(pre) {
-    margin: 1.5em 0;
-    border-radius: var(--radii-md);
-    padding: 1em 1.5em;
   }
 
   // Inline codes
@@ -116,5 +135,12 @@ const { isShowToc } = Astro.props as Props
     border-radius: var(--radii-md);
     background-color: var(--color-inline-code-background);
     transition-property: background-color;
+  }
+
+  // Codeblock
+  .content :global(pre) {
+    margin: 1.5em 0;
+    border-radius: var(--radii-md);
+    padding: 1em 1.5em;
   }
 </style>
