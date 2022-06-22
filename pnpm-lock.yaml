@@ -5,7 +5,7 @@ specifiers:
   '@babel/core': ^7.18.5
   '@typescript-eslint/eslint-plugin': ^5.29.0
   '@typescript-eslint/parser': ^5.29.0
-  astro: ^1.0.0-beta.50
+  astro: ^1.0.0-beta.51
   astro-eslint-parser: ^0.2.2
   astro-imagetools: ^0.6.10
   autoprefixer: ^10.4.7
@@ -32,9 +32,9 @@ devDependencies:
   '@babel/core': 7.18.5
   '@typescript-eslint/eslint-plugin': 5.29.0_qqmbkyiaixvppdwswpytuf2hgm
   '@typescript-eslint/parser': 5.29.0_b5e7v2qnwxfo6hmiq56u52mz3e
-  astro: 1.0.0-beta.50_sass@1.52.3
+  astro: 1.0.0-beta.51_sass@1.52.3
   astro-eslint-parser: 0.2.2
-  astro-imagetools: 0.6.10_astro@1.0.0-beta.50
+  astro-imagetools: 0.6.10_astro@1.0.0-beta.51
   autoprefixer: 10.4.7_postcss@8.4.14
   clsx: 1.1.1
   cssnano: 5.1.12_postcss@8.4.14
@@ -1297,14 +1297,14 @@ packages:
       - supports-color
     dev: true
 
-  /astro-imagetools/0.6.10_astro@1.0.0-beta.50:
+  /astro-imagetools/0.6.10_astro@1.0.0-beta.51:
     resolution: {integrity: sha512-b3+vCkud6HeWe3brUI7Rq/RXUPOtuv3GV/ENhd1+4mflISWgCWAEIFSTr+56R6/LUpMdh+ZlLjOQaCG5Ig1v7g==}
     engines: {node: ^14.15.0 || >=16.0.0}
     peerDependencies:
       astro: '>=0.26 || >=1.0.0-beta'
     dependencies:
       '@astropub/codecs': 0.4.4
-      astro: 1.0.0-beta.50_sass@1.52.3
+      astro: 1.0.0-beta.51_sass@1.52.3
       file-type: 17.1.1
       find-cache-dir: 3.3.2
       find-up: 6.3.0
@@ -1314,8 +1314,8 @@ packages:
       imagetools-core: 3.0.2
     dev: true
 
-  /astro/1.0.0-beta.50_sass@1.52.3:
-    resolution: {integrity: sha512-apKHd3NGivSroTs5xSGEaFcGCl79wDnRJd9j4wDxM0KjnkVm/EHYbiI/OEzyps+A8B/fGnQ23uW9Rn/hDlyBzw==}
+  /astro/1.0.0-beta.51_sass@1.52.3:
+    resolution: {integrity: sha512-arFrSrJ3d93+mvQbq8V4khEP+Et01ZdDV80jWfuFxtAnZpdZ+Qsv/ZkVbYmwSJdClJAxYt7YqVfeZKxUXHCcwg==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1498,7 +1498,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001358
-      electron-to-chromium: 1.4.164
+      electron-to-chromium: 1.4.165
       node-releases: 2.0.5
       update-browserslist-db: 1.0.3_browserslist@4.21.0
     dev: true
@@ -1586,8 +1586,8 @@ packages:
     resolution: {integrity: sha512-RpPp0asT/6ufRm//AJVwpViZbGM/MkjQFxJccQRHmISF/22NBtsHqAWmL+/pmkPWoIUJdWyeVleTl1wydHATVQ==}
     dev: true
 
-  /character-entities/2.0.1:
-    resolution: {integrity: sha512-OzmutCf2Kmc+6DrFrrPS8/tDh2+DpnrfzdICHWhcVC9eOd0N1PXmQEE1a8iM4IziIAG+8tmTq3K+oo0ubH6RRQ==}
+  /character-entities/2.0.2:
+    resolution: {integrity: sha512-shx7oQ0Awen/BRIdkjkvz54PnEEI/EjwXDSIZp86/KKdbafHh1Df/RYGBhn4hbe2+uKC9FnT5UCEdyPz3ai9hQ==}
     dev: true
 
   /character-reference-invalid/2.0.1:
@@ -1884,7 +1884,7 @@ packages:
   /decode-named-character-reference/1.0.2:
     resolution: {integrity: sha512-O8x12RzrUF8xyVcY0KJowWsmaJxQbmy0/EtnNtHRpsOcT7dFk5W598coHqBVpmWo1oQQfsCqfCmkZN5DJrZVdg==}
     dependencies:
-      character-entities: 2.0.1
+      character-entities: 2.0.2
     dev: true
 
   /decode-uri-component/0.2.0:
@@ -2019,8 +2019,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium/1.4.164:
-    resolution: {integrity: sha512-K7iy5y6XyP9Pzh3uaDti0KC4JUNT6T1tLG5RTOmesqq2YgAJpYYYJ32m+anvZYjCV35llPTEh87kvEV/uSsiyQ==}
+  /electron-to-chromium/1.4.165:
+    resolution: {integrity: sha512-DKQW1lqUSAYQvn9dnpK7mWaDpWbNOXQLXhfCi7Iwx0BKxdZOxkKcCyKw1l3ihWWW5iWSxKKbhEUoNRoHvl/hbA==}
     dev: true
 
   /emmet/2.3.6:
@@ -4392,7 +4392,7 @@ packages:
     resolution: {integrity: sha512-5nk9Fn03x3rEhGaX1FU6IDwG/k+GxLXlFAkgrbM1asuAFl3BhdQWvASaIsmwWypRNcZKHPYnIuOSfIWEyEQnPQ==}
     dependencies:
       '@types/unist': 2.0.6
-      character-entities: 2.0.1
+      character-entities: 2.0.2
       character-entities-legacy: 3.0.0
       character-reference-invalid: 2.0.1
       decode-named-character-reference: 1.0.2
