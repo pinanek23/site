@@ -1,0 +1,31 @@
+import type { MarkdownInstance } from 'astro'
+
+interface PostImage {
+  url: string
+  alt: string
+}
+
+interface PostHeadings {
+  id: string
+  level: number
+  content: string
+}
+
+interface PostFrontMatter {
+  title: string
+  seoTitle: string
+  description: string
+  categories: string[]
+  image: PostImage
+  headings: PostHeadings[]
+  isPublished: boolean
+  isShowToc?: boolean
+  publishedDate?: string
+  lastUpdated?: string
+}
+
+type Post = MarkdownInstance<PostFrontMatter>
+
+type PostHeaders = Awaited<ReturnType<Post['getHeaders']>>
+
+export type { Post, PostHeaders, PostFrontMatter }

@@ -1,0 +1,27 @@
+.size {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.button {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.placeHolder {
+  display: inline-block;
+}
+
+.svg {
+  fill: none;
+}
+
+.svg path {
+  fill: var(--color-text-default);
+  transition-property: fill;
+  transition-duration: var(--duration-default);
+  transition-timing-function: var(--ease-in-out);
+}

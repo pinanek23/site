@@ -1,8 +1,4 @@
-.next
-.contentlayer
-node_modules
-out
-build
-public
-next-env.d.ts
+node_modules/
+public/
+dist/
 pnpm-lock.yaml

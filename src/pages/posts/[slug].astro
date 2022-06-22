@@ -1,0 +1,62 @@
+---
+import * as path from 'path'
+import MainLayout from '@/layouts/main-layout.astro'
+import PostLayout from '@/layouts/post-layout.astro'
+import type { Post, PostFrontMatter, PostHeaders } from '@/types/post'
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob<PostFrontMatter>('/data/posts/{*,**/index}.md')
+
+  const data = await Promise.all(
+    posts.map(async (post) => {
+      const { Content, frontmatter, file } = post
+
+      const match = post.file.match(/(.+)\/index.md$/)
+      const slug = (match === null ? file.replace(/\.md$/, '') : match[1]).split(/[/\\]/).pop()
+
+      const headers = frontmatter.isShowToc === false ? undefined : await post.getHeaders()
+
+      // Resolve frontmatter image
+      const dirName = path.dirname(file)
+      const image = {
+        url: path.join(dirName.substring(dirName.search(/\/data\/[\w-/]+$/)), frontmatter.image.url),
+        alt: frontmatter.image.alt
+      }
+
+      return {
+        params: { slug },
+        props: {
+          Content,
+          frontmatter: {
+            ...frontmatter,
+            image
+          },
+          headers
+        }
+      }
+    })
+  )
+
+  return data
+}
+
+interface Props extends Pick<Post, 'Content' | 'frontmatter'> {
+  headers: PostHeaders | undefined
+}
+
+const { Content, headers, frontmatter } = Astro.props as Props
+---
+
+<MainLayout
+  head={{
+    title: frontmatter.title,
+    seoTitle: frontmatter.seoTitle,
+    description: frontmatter.description,
+    imageSrc: frontmatter.image.url,
+    imageAlt: frontmatter.image.alt
+  }}
+>
+  <PostLayout headers={headers} {...frontmatter}>
+    <Content />
+  </PostLayout>
+</MainLayout>

@@ -1,8 +1,4 @@
-.next
-.contentlayer
-node_modules
-out
-build
-public
-next-env.d.ts
-next.config.js
+node_modules/
+public/
+dist/
+**/*.mjs
