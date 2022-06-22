@@ -11,15 +11,15 @@ export interface Props {
 const { head } = Astro.props as Props
 ---
 
-<html lang="en">
+<html lang='en'>
   <head>
     <HeadCommon />
     <HeadSEO {...head} />
   </head>
   <body>
-    <div id="__root">
+    <div id='__root'>
       <Header />
-      <slot />
+      <slot></slot>
     </div>
   </body>
 </html>

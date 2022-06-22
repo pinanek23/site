@@ -7,10 +7,10 @@ const { href } = Astro.props as Props
 ---
 
 <a href={href}>
-  <slot />
+  <slot></slot>
 </a>
 
-<style lang="scss">
+<style lang='scss'>
   a {
     text-decoration: none;
     color: var(--color-text-default);
