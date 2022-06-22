@@ -5,7 +5,7 @@ specifiers:
   '@babel/core': ^7.18.5
   '@typescript-eslint/eslint-plugin': ^5.29.0
   '@typescript-eslint/parser': ^5.29.0
-  astro: ^1.0.0-beta.51
+  astro: ^1.0.0-beta.52
   astro-eslint-parser: ^0.2.2
   astro-imagetools: ^0.6.10
   autoprefixer: ^10.4.7
@@ -23,7 +23,7 @@ specifiers:
   rehype-autolink-headings: ^6.1.1
   rehype-external-links: ^1.0.1
   rehype-slug: ^5.0.1
-  sass: ^1.52.3
+  sass: ^1.53.0
   solid-js: ^1.4.4
   typescript: ^4.7.4
 
@@ -32,9 +32,9 @@ devDependencies:
   '@babel/core': 7.18.5
   '@typescript-eslint/eslint-plugin': 5.29.0_qqmbkyiaixvppdwswpytuf2hgm
   '@typescript-eslint/parser': 5.29.0_b5e7v2qnwxfo6hmiq56u52mz3e
-  astro: 1.0.0-beta.51_sass@1.52.3
+  astro: 1.0.0-beta.52_sass@1.53.0
   astro-eslint-parser: 0.2.2
-  astro-imagetools: 0.6.10_astro@1.0.0-beta.51
+  astro-imagetools: 0.6.10_astro@1.0.0-beta.52
   autoprefixer: 10.4.7_postcss@8.4.14
   clsx: 1.1.1
   cssnano: 5.1.12_postcss@8.4.14
@@ -50,7 +50,7 @@ devDependencies:
   rehype-autolink-headings: 6.1.1
   rehype-external-links: 1.0.1
   rehype-slug: 5.0.1
-  sass: 1.52.3
+  sass: 1.53.0
   solid-js: 1.4.4
   typescript: 4.7.4
 
@@ -1282,14 +1282,14 @@ packages:
       - supports-color
     dev: true
 
-  /astro-imagetools/0.6.10_astro@1.0.0-beta.51:
+  /astro-imagetools/0.6.10_astro@1.0.0-beta.52:
     resolution: {integrity: sha512-b3+vCkud6HeWe3brUI7Rq/RXUPOtuv3GV/ENhd1+4mflISWgCWAEIFSTr+56R6/LUpMdh+ZlLjOQaCG5Ig1v7g==}
     engines: {node: ^14.15.0 || >=16.0.0}
     peerDependencies:
       astro: '>=0.26 || >=1.0.0-beta'
     dependencies:
       '@astropub/codecs': 0.4.4
-      astro: 1.0.0-beta.51_sass@1.52.3
+      astro: 1.0.0-beta.52_sass@1.53.0
       file-type: 17.1.1
       find-cache-dir: 3.3.2
       find-up: 6.3.0
@@ -1299,8 +1299,8 @@ packages:
       imagetools-core: 3.0.2
     dev: true
 
-  /astro/1.0.0-beta.51_sass@1.52.3:
-    resolution: {integrity: sha512-arFrSrJ3d93+mvQbq8V4khEP+Et01ZdDV80jWfuFxtAnZpdZ+Qsv/ZkVbYmwSJdClJAxYt7YqVfeZKxUXHCcwg==}
+  /astro/1.0.0-beta.52_sass@1.53.0:
+    resolution: {integrity: sha512-rYloMdpiiTn/Fd5ngRzQfcnWwYOeci0Sp87eLFS3s3o6wRVPEiYnBKYHA2L5Eoyx/IdAqvHf0Er26pDA7sYwXg==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1356,7 +1356,7 @@ packages:
       strip-ansi: 7.0.1
       supports-esm: 1.0.0
       tsconfig-resolver: 3.0.1
-      vite: 2.9.12_sass@1.52.3
+      vite: 2.9.12_sass@1.53.0
       yargs-parser: 21.0.1
       zod: 3.17.3
     transitivePeerDependencies:
@@ -5228,8 +5228,8 @@ packages:
       suf-log: 2.5.3
     dev: true
 
-  /sass/1.52.3:
-    resolution: {integrity: sha512-LNNPJ9lafx+j1ArtA7GyEJm9eawXN8KlA1+5dF6IZyoONg1Tyo/g+muOsENWJH/2Q1FHbbV4UwliU0cXMa/VIA==}
+  /sass/1.53.0:
+    resolution: {integrity: sha512-zb/oMirbKhUgRQ0/GFz8TSAwRq2IlR29vOUJZOx0l8sV+CkHUfHa4u5nqrG+1VceZp7Jfj59SVW9ogdhTvJDcQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -5962,7 +5962,7 @@ packages:
       vfile-message: 3.1.2
     dev: true
 
-  /vite/2.9.12_sass@1.52.3:
+  /vite/2.9.12_sass@1.53.0:
     resolution: {integrity: sha512-suxC36dQo9Rq1qMB2qiRorNJtJAdxguu5TMvBHOc/F370KvqAe9t48vYp+/TbPKRNrMh/J55tOUmkuIqstZaew==}
     engines: {node: '>=12.2.0'}
     hasBin: true
@@ -5982,7 +5982,7 @@ packages:
       postcss: 8.4.14
       resolve: 1.22.1
       rollup: 2.75.7
-      sass: 1.52.3
+      sass: 1.53.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
