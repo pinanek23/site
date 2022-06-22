@@ -1,3 +1,5 @@
+import type { MarkdownInstance } from 'astro'
+
 interface PostImage {
   url: string
   alt: string
@@ -22,4 +24,8 @@ interface PostFrontMatter {
   lastUpdated?: string
 }
 
-export type { PostFrontMatter }
+type Post = MarkdownInstance<PostFrontMatter>
+
+type PostHeaders = Awaited<ReturnType<Post['getHeaders']>>
+
+export type { Post, PostHeaders, PostFrontMatter }

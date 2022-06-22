@@ -1,44 +1,91 @@
 ---
-import type { PostFrontMatter } from '@/types/post'
-export type Props = PostFrontMatter
-const { isShowToc } = Astro.props as Props
+import TableOfContent from '@/components/right-sidebar/table-of-content'
+import type { PostFrontMatter, PostHeaders } from '@/types/post'
+
+export interface Props extends PostFrontMatter {
+  headers?: PostHeaders
+}
+
+const { headers } = Astro.props as Props
 ---
 
-<div class:list={['content-spacing', 'content', isShowToc ? 'content-sizing' : 'content-without-toc']}>
-  <slot></slot>
+<div
+  class:list={[
+    'content-container-spacing',
+    'content-container',
+    headers !== undefined ? ['content-container-sizing', 'content-toc'] : 'content-without-toc'
+  ]}
+>
+  {headers !== undefined && <TableOfContent client:load headers={headers} class="toc" />}
+  <div class='content' id='post-content'>
+    <slot></slot>
+  </div>
 </div>
 
 <style lang='scss'>
+  @use 'src/styles/abstracts/mixins' as *;
+
+  .content-container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    --paragraph-line-height: calc(1em + 0.75rem);
+  }
+
   .content-without-toc {
     max-width: 53rem;
   }
-  .content {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    --paragraph-line-height: calc(1em + 0.75rem);
+
+  .content-toc {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include responsive(lg) {
+      flex-direction: row-reverse;
+      gap: 4rem;
+    }
   }
+
+  .toc {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+
+  .content {
+    width: 100%;
+    min-width: 0;
+  }
+
   /* Transition */
   .content :global(p, h2, h3, h4, a, blockquote, li, code:not(pre > code)) {
     transition-property: color;
     transition-duration: var(--duration-default);
     transition-timing-function: var(--ease-in-out);
   }
+
   /* Headings */
   .content :global(h2, h3, h4) {
     position: relative;
+    scroll-margin-top: 7rem;
   }
+
   .content :global(h2) {
     margin: 1.5em 0 0.5em;
     font-size: 1.75em;
   }
+
   .content :global(h3) {
     margin: 1.25em 0 0.5em;
     font-size: 1.375em;
   }
+
   .content :global(h4) {
     margin: 1em 0;
     font-size: 1.125em;
   }
+
   // Headings link
   .content :global(.heading-link) {
     width: 1.5rem;
@@ -51,20 +98,25 @@ const { isShowToc } = Astro.props as Props
     transition-property: opacity;
     color: var(--color-text-default);
   }
+
   .content :global(:where(h2, h3, h4):hover .heading-link) {
     opacity: 1;
   }
+
   .content :global(.heading-link > svg) {
     fill: none;
   }
+
   .content :global(.heading-link > svg > path) {
     fill: var(--color-text-default);
   }
+
   /* Paragraphs */
   .content :global(p) {
     margin: 1em 0;
     line-height: var(--paragraph-line-height);
   }
+
   /* Links */
   .content :global(a:not(.heading-link)) {
     display: inline-flex;
@@ -74,17 +126,21 @@ const { isShowToc } = Astro.props as Props
     text-decoration: underline;
     text-decoration-color: transparent;
     transition-property: color, text-decoration-color;
+
     &:hover {
       text-decoration-color: var(--color-accent-default);
     }
   }
+
   /* Images */
   .content :global(img) {
     border-radius: var(--radii-md);
   }
+
   .content :global(picture::after) {
     border-radius: var(--radii-md);
   }
+
   /* Blockquotes */
   .content :global(blockquote) {
     margin: '1em 0';
@@ -93,19 +149,23 @@ const { isShowToc } = Astro.props as Props
     border-left: 0.2em solid var(--color-blockquote-border);
     transition-property: border-color;
   }
+
   /* Lists */
   .content :global(ul, ol) {
     margin: 1em 0;
     line-height: var(--paragraph-line-height);
   }
+
   // Ordered lists
   .content :global(ol li::marker) {
     font-weight: var(--font-weight-bold);
   }
+
   /* Code */
   .content :global(code) {
     font-family: var(--font-mono);
   }
+
   // Inline codes
   .content :global(code:not(pre > code)) {
     padding: 0.25em 0.5em;
@@ -113,6 +173,7 @@ const { isShowToc } = Astro.props as Props
     background-color: var(--color-inline-code-background);
     transition-property: background-color;
   }
+
   // Codeblock
   .content :global(pre) {
     margin: 1.5em 0;

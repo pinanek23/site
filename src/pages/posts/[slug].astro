@@ -1,32 +1,38 @@
 ---
 import MainLayout from '@/layouts/main-layout.astro'
 import PostLayout from '@/layouts/post-layout.astro'
-import type { MarkdownInstance } from 'astro'
-import type { PostFrontMatter } from '@/types/post'
+import type { Post, PostFrontMatter, PostHeaders } from '@/types/post'
 
 export async function getStaticPaths() {
   const posts = await Astro.glob<PostFrontMatter>('/data/posts/{*,**/index}.md')
 
-  return posts.map((post) => {
-    const match = post.file.match(/(.+)\/index.md$/)
-    const slug = (match === null ? post.file.replace(/\.md$/, '') : match[1]).split(/[/\\]/).pop()
+  const data = await Promise.all(
+    posts.map(async (post) => {
+      const match = post.file.match(/(.+)\/index.md$/)
+      const slug = (match === null ? post.file.replace(/\.md$/, '') : match[1]).split(/[/\\]/).pop()
+      const headers = post.frontmatter.isShowToc === false ? undefined : await post.getHeaders()
 
-    return {
-      params: { slug },
-      props: {
-        Content: post.Content,
-        frontmatter: {
-          ...post.frontmatter,
-          isShowToc: post.frontmatter.isShowToc ?? true
+      return {
+        params: { slug },
+        props: {
+          Content: post.Content,
+          frontmatter: {
+            ...post.frontmatter
+          },
+          headers
         }
       }
-    }
-  })
+    })
+  )
+
+  return data
 }
 
-type Props = Pick<MarkdownInstance<PostFrontMatter>, 'Content' | 'frontmatter'>
+interface Props extends Pick<Post, 'Content' | 'frontmatter'> {
+  headers: PostHeaders | undefined
+}
 
-const { Content, frontmatter } = Astro.props as Props
+const { Content, headers, frontmatter } = Astro.props as Props
 ---
 
 <MainLayout
@@ -38,7 +44,7 @@ const { Content, frontmatter } = Astro.props as Props
     imageAlt: frontmatter.image.alt
   }}
 >
-  <PostLayout {...frontmatter}>
+  <PostLayout headers={headers} {...frontmatter}>
     <Content />
   </PostLayout>
 </MainLayout>

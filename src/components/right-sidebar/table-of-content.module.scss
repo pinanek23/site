@@ -1,0 +1,37 @@
+@use 'src/styles/abstracts/mixins' as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+
+  @include responsive(lg) {
+    position: sticky;
+    top: 7rem;
+    width: 14rem;
+  }
+}
+
+.item {
+  color: var(--color-text-default);
+  text-decoration: none;
+  transition-property: color, font-weight;
+  transition-duration: var(--duration-default);
+  transition-timing-function: var(--ease-in-out);
+}
+
+.selected {
+  @include responsive(lg) {
+    color: var(--color-accent-default);
+    font-weight: var(--font-weight-semi);
+  }
+}
+
+.level3 {
+  padding-left: 0.75rem;
+}
+
+.level4 {
+  padding-left: 1.5rem;
+}
