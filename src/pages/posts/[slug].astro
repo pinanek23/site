@@ -14,7 +14,7 @@ export async function getStaticPaths() {
       const match = post.file.match(/(.+)\/index.md$/)
       const slug = (match === null ? file.replace(/\.md$/, '') : match[1]).split(/[/\\]/).pop()
 
-      const headers = frontmatter.isShowToc === false ? undefined : await post.getHeaders()
+      const headers = frontmatter.isEnablingToc === false ? undefined : await post.getHeaders()
 
       // Resolve frontmatter image
       const dirName = path.dirname(file)
@@ -41,7 +41,7 @@ export async function getStaticPaths() {
 }
 
 interface Props extends Pick<Post, 'Content' | 'frontmatter'> {
-  headers: PostHeaders | undefined
+  headers?: PostHeaders
 }
 
 const { Content, headers, frontmatter } = Astro.props as Props

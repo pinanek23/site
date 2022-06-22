@@ -19,7 +19,7 @@ interface PostFrontMatter {
   image: PostImage
   headings: PostHeadings[]
   isPublished: boolean
-  isShowToc?: boolean
+  isEnablingToc?: boolean
   publishedDate?: string
   lastUpdated?: string
 }

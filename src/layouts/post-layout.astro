@@ -9,14 +9,14 @@ export interface Props extends PostFrontMatter {
 }
 
 const { headers, ...fronmatter } = Astro.props as Props
+
+const isTocEnabled = headers !== undefined
 ---
 
-<div
-  class:list={['container', 'content-spacing', headers !== undefined ? ['content-sizing'] : 'container-without-toc']}
->
+<div class:list={['container', 'content-spacing', isTocEnabled ? ['content-sizing'] : 'container-without-toc']}>
   <PostHeader {...fronmatter} />
-  <div class:list={['content-container', headers !== undefined && 'content-container-with-toc']}>
-    {headers !== undefined && <TableOfContent client:load headers={headers} class="toc" />}
+  <div class:list={['content-container', isTocEnabled && 'content-container-with-toc']}>
+    {isTocEnabled && <TableOfContent client:load headers={headers} class="toc" />}
     <PostContent class='content'>
       <slot></slot>
     </PostContent>
