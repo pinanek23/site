@@ -19,6 +19,7 @@ specifiers:
   postcss: ^8.4.14
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.0.12
+  rehype-external-links: ^1.0.1
   sass: ^1.52.3
   solid-js: ^1.4.4
   typescript: ^4.7.4
@@ -42,6 +43,7 @@ devDependencies:
   postcss: 8.4.14
   prettier: 2.7.1
   prettier-plugin-astro: 0.0.12
+  rehype-external-links: 1.0.1
   sass: 1.52.3
   solid-js: 1.4.4
   typescript: 4.7.4
@@ -3079,6 +3081,11 @@ packages:
       side-channel: 1.0.4
     dev: true
 
+  /is-absolute-url/4.0.1:
+    resolution: {integrity: sha512-/51/TKE88Lmm7Gc4/8btclNXWS+g50wXhYJq8HWIBAGUBnoAdRu1aXeh364t/O7wXDAcTJDP8PNuNKWUDWie+A==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: true
+
   /is-alphabetical/2.0.1:
     resolution: {integrity: sha512-FWyyY60MeTNyeSRpkM2Iry0G9hpr7/9kD40mD/cGQEuilcZYS4okz8SN2Q6rLCJ8gbCt6fN+rC+6tMGS99LaxQ==}
     dev: true
@@ -4999,6 +5006,17 @@ packages:
   /regexpp/3.2.0:
     resolution: {integrity: sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==}
     engines: {node: '>=8'}
+    dev: true
+
+  /rehype-external-links/1.0.1:
+    resolution: {integrity: sha512-SrMMtIO2tPLWDfvibhECAn9cuEMW6Fi40ZVK2UQSPTnDEv3LraLzGVyKGb/vrDlUy4RCYTcmm0rq/ss9nPqrsw==}
+    dependencies:
+      '@types/hast': 2.3.4
+      extend: 3.0.2
+      is-absolute-url: 4.0.1
+      space-separated-tokens: 2.0.1
+      unified: 10.1.2
+      unist-util-visit: 4.1.0
     dev: true
 
   /rehype-raw/6.1.1:

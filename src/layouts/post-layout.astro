@@ -11,12 +11,110 @@ const { isShowToc } = Astro.props as Props
 </div>
 
 <style lang="scss">
+  .content-without-toc {
+    max-width: 53rem;
+  }
+
   .content {
     margin-top: 3rem;
     margin-bottom: 3rem;
+
+    --paragraph-line-height: calc(1em + 0.75rem);
   }
 
-  .content-without-toc {
-    max-width: 53rem;
+  // Transition
+  .content :global(p, h2, h3, h4, a, blockquote, li, code:not(pre > code)) {
+    transition-property: color;
+    transition-duration: var(--duration-default);
+    transition-timing-function: var(--ease-in-out);
+  }
+
+  // Headings
+  .content :global(h2, h3, h4) {
+    position: relative;
+  }
+
+  .content :global(h2) {
+    margin: 1.5em 0 0.5em;
+    font-size: 1.75em;
+  }
+
+  .content :global(h3) {
+    margin: 1.25em 0 0.5em;
+    font-size: 1.375em;
+  }
+
+  .content :global(h4) {
+    margin: 1em 0;
+    font-size: 1.125em;
+  }
+
+  // Paragraphs
+  .content :global(p) {
+    margin: 1em 0;
+    line-height: var(--paragraph-line-height);
+  }
+
+  // Links
+  .content :global(a) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    color: var(--color-accent-default);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition-property: color, text-decoration-color;
+
+    &:hover {
+      text-decoration-color: var(--color-accent-default);
+    }
+  }
+
+  // Images
+  .content :global(img) {
+    border-radius: var(--radii-md);
+  }
+
+  .content :global(picture::after) {
+    border-radius: var(--radii-md);
+  }
+
+  // Lists
+  .content :global(ul, ol) {
+    margin: 1em 0;
+    line-height: var(--paragraph-line-height);
+  }
+
+  // Blockquotes
+  .content :global(blockquote) {
+    margin: '1em 0';
+    font-style: italic;
+    padding: 0 0.5em;
+    border-left: 0.2em solid var(--color-blockquote-border);
+    transition-property: border-color;
+  }
+
+  // Ordered lists
+  .content :global(ol li::marker) {
+    font-weight: var(--font-weight-bold);
+  }
+
+  // Code
+  .content :global(code) {
+    font-family: var(--font-mono);
+  }
+
+  .content :global(pre) {
+    margin: 1.5em 0;
+    border-radius: var(--radii-md);
+    padding: 1em 1.5em;
+  }
+
+  // Inline codes
+  .content :global(code:not(pre > code)) {
+    padding: 0.25em 0.5em;
+    border-radius: var(--radii-md);
+    background-color: var(--color-inline-code-background);
+    transition-property: background-color;
   }
 </style>

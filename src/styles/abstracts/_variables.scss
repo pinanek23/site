@@ -21,6 +21,11 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+  // Border radiuses
+  --radii-sm: 6px;
+  --radii-md: 8px;
+  --radii-lg: 10px;
 }
 
 // Colors
@@ -38,6 +43,10 @@
   --color-accent-default: #006adc;
 
   --color-critical-default: #ef233c;
+
+  // Content
+  --color-blockquote-border: #e5e4e9;
+  --color-inline-code-background: #ecebf0;
 }
 
 :root.dark {
@@ -54,4 +63,8 @@
   --color-accent-default: #d1e6fa;
 
   --color-critical-default: #f68895;
+
+  // Content
+  --color-blockquote-border: #363636;
+  --color-inline-code-background: #282828;
 }
