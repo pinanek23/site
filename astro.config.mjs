@@ -25,6 +25,8 @@ const headingLinkIcon = s(
 )
 
 export default defineConfig({
+  site: 'https://pinanek23.pages.dev',
+
   integrations: [solid(), astroImageTools],
 
   experimental: {
