@@ -11,7 +11,10 @@ export async function getStaticPaths() {
     posts.map(async (post) => {
       const { Content, frontmatter, file } = post
 
-      const slug = file.replace(/\.md$/, '').split(/[/\\]/).pop()
+      const slug = file
+        .replace(/\/index.md$/, '')
+        .split(/[/\\]/)
+        .pop()
 
       const headers = frontmatter.isEnablingToc === false ? undefined : await post.getHeaders()
 
