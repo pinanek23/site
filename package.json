@@ -13,6 +13,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^0.2.1",
     "@astrojs/solid-js": "^0.1.4",
     "@babel/core": "^7.18.5",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
