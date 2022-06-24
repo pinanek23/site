@@ -6,7 +6,7 @@ specifiers:
   '@babel/core': ^7.18.5
   '@typescript-eslint/eslint-plugin': ^5.29.0
   '@typescript-eslint/parser': ^5.29.0
-  astro: ^1.0.0-beta.52
+  astro: ^1.0.0-beta.53
   astro-eslint-parser: ^0.2.2
   astro-imagetools: ^0.6.10
   autoprefixer: ^10.4.7
@@ -35,9 +35,9 @@ devDependencies:
   '@babel/core': 7.18.5
   '@typescript-eslint/eslint-plugin': 5.29.0_qqmbkyiaixvppdwswpytuf2hgm
   '@typescript-eslint/parser': 5.29.0_b5e7v2qnwxfo6hmiq56u52mz3e
-  astro: 1.0.0-beta.52_sass@1.53.0
+  astro: 1.0.0-beta.53_sass@1.53.0
   astro-eslint-parser: 0.2.2
-  astro-imagetools: 0.6.10_astro@1.0.0-beta.52
+  astro-imagetools: 0.6.10_astro@1.0.0-beta.53
   autoprefixer: 10.4.7_postcss@8.4.14
   clsx: 1.1.1
   cssnano: 5.1.12_postcss@8.4.14
@@ -1307,14 +1307,14 @@ packages:
       - supports-color
     dev: true
 
-  /astro-imagetools/0.6.10_astro@1.0.0-beta.52:
+  /astro-imagetools/0.6.10_astro@1.0.0-beta.53:
     resolution: {integrity: sha512-b3+vCkud6HeWe3brUI7Rq/RXUPOtuv3GV/ENhd1+4mflISWgCWAEIFSTr+56R6/LUpMdh+ZlLjOQaCG5Ig1v7g==}
     engines: {node: ^14.15.0 || >=16.0.0}
     peerDependencies:
       astro: '>=0.26 || >=1.0.0-beta'
     dependencies:
       '@astropub/codecs': 0.4.4
-      astro: 1.0.0-beta.52_sass@1.53.0
+      astro: 1.0.0-beta.53_sass@1.53.0
       file-type: 17.1.1
       find-cache-dir: 3.3.2
       find-up: 6.3.0
@@ -1324,8 +1324,8 @@ packages:
       imagetools-core: 3.0.2
     dev: true
 
-  /astro/1.0.0-beta.52_sass@1.53.0:
-    resolution: {integrity: sha512-rYloMdpiiTn/Fd5ngRzQfcnWwYOeci0Sp87eLFS3s3o6wRVPEiYnBKYHA2L5Eoyx/IdAqvHf0Er26pDA7sYwXg==}
+  /astro/1.0.0-beta.53_sass@1.53.0:
+    resolution: {integrity: sha512-K+sgcQ3EGWi7ewZTScXgBRMvOMatVrQH400WqkUVPV48wJK0X2fN3r9nW+oZtVCE9RRfNdr/oaWeLi55LkJRBA==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1508,9 +1508,9 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001358
-      electron-to-chromium: 1.4.165
+      electron-to-chromium: 1.4.168
       node-releases: 2.0.5
-      update-browserslist-db: 1.0.3_browserslist@4.21.0
+      update-browserslist-db: 1.0.4_browserslist@4.21.0
     dev: true
 
   /buffer-equal/0.0.1:
@@ -2029,8 +2029,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium/1.4.165:
-    resolution: {integrity: sha512-DKQW1lqUSAYQvn9dnpK7mWaDpWbNOXQLXhfCi7Iwx0BKxdZOxkKcCyKw1l3ihWWW5iWSxKKbhEUoNRoHvl/hbA==}
+  /electron-to-chromium/1.4.168:
+    resolution: {integrity: sha512-yz247hclRBaP8ABB1hf9kL7AMfa+yC2hB9F3XF8Y87VWMnYgq4QYvV6acRACcDkTDxfGQ4GYK/aZPQiuFMGbaA==}
     dev: true
 
   /emmet/2.3.6:
@@ -5922,8 +5922,8 @@ packages:
       unist-util-visit-parents: 5.1.0
     dev: true
 
-  /update-browserslist-db/1.0.3_browserslist@4.21.0:
-    resolution: {integrity: sha512-ufSazemeh9Gty0qiWtoRpJ9F5Q5W3xdIPm1UZQqYQv/q0Nyb9EMHUB2lu+O9x1re9WsorpMAUu4Y6Lxcs5n+XQ==}
+  /update-browserslist-db/1.0.4_browserslist@4.21.0:
+    resolution: {integrity: sha512-jnmO2BEGUjsMOe/Fg9u0oczOe/ppIDZPebzccl1yDWGLFP16Pa1/RM5wEoKYPG2zstNcDuAStejyxsOuKINdGA==}
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
