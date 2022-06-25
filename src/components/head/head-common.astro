@@ -23,19 +23,21 @@
 </script>
 
 <script>
-  function setDarkColorMode(isDarkColorMode) {
+  type ColorMode = 'system' | 'light' | 'dark'
+
+  function setDarkColorMode(isDarkColorMode: boolean) {
     isDarkColorMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')
   }
 
   function updateColorMode() {
-    const savedColorMode = localStorage.getItem('color-mode')
+    const savedColorMode = localStorage.getItem('color-mode') as ColorMode | undefined
     const isPreferDarkColorMode = window.matchMedia('(prefers-color-scheme: dark)').matches
 
     if (
       savedColorMode === undefined ||
       !(savedColorMode === 'system' || savedColorMode === 'light' || savedColorMode === 'dark')
     ) {
-      window.localStorage.setItem('color-mode', 'system')
+      localStorage.setItem('color-mode', 'system')
       setDarkColorMode(isPreferDarkColorMode)
     } else {
       if (savedColorMode === 'system') {
