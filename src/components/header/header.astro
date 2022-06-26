@@ -3,6 +3,7 @@ import HeaderItem from './header-item.astro'
 import Logo from './logo.astro'
 import MenuButton from './menu-button'
 import ThemeButton from './theme-button'
+import RssIcon from '@/components/icons/rss-icon.astro'
 
 interface Props {
   class?: string
@@ -22,7 +23,12 @@ const { class: className } = Astro.props as Props
         <HeaderItem href='/categories/'>Categories</HeaderItem>
         <HeaderItem href='/about/'>About me ❤️</HeaderItem>
       </div>
-      <ThemeButton client:load />
+      <div class='utils-items'>
+        <ThemeButton client:load />
+        <a target='_blank' rel='noopener noreferrer' href='/rss.xml' aria-label='RSS feed'>
+          <RssIcon />
+        </a>
+      </div>
     </div>
     <MenuButton client:load class='menu-button' />
   </div>
@@ -99,6 +105,16 @@ const { class: className } = Astro.props as Props
 
     @include responsive(md) {
       display: flex;
+    }
+  }
+
+  .utils-items {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    @include responsive(md) {
+      gap: 1.25rem;
     }
   }
 </style>

@@ -18,9 +18,8 @@ interface PostFrontMatter {
   categories: string[]
   image: PostImage
   headings: PostHeadings[]
-  isPublished: boolean
   isEnablingToc?: boolean
-  publishedDate?: string
+  publishedDate: string
   lastUpdated?: string
 }
 
