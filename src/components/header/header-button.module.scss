@@ -21,4 +21,5 @@
 
 .svg path {
   fill: var(--color-text-default);
+  transition: fill var(--duration-default) var(--ease-in-out);
 }

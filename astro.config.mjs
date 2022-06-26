@@ -3,7 +3,6 @@ import { defineConfig } from 'astro/config'
 import solid from '@astrojs/solid-js'
 import sitemap from '@astrojs/sitemap'
 import { astroImageTools } from 'astro-imagetools'
-import infoBar from './integrations/infobar-integration.mjs'
 
 import autoprefixer from 'autoprefixer'
 import cssnano from 'cssnano'
@@ -29,7 +28,7 @@ const headingLinkIcon = s(
 export default defineConfig({
   site: 'https://pinanek23.pages.dev',
 
-  integrations: [solid(), sitemap(), infoBar(), astroImageTools],
+  integrations: [solid(), sitemap(), astroImageTools],
 
   experimental: {
     integrations: true

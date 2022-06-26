@@ -1,11 +1,10 @@
 ---
-export interface Props {
+interface Props {
   category: string
 }
 
 const { category } = Astro.props as Props
-
-const href = `/categories/${category}`
+const href = `/categories/${category}/`
 ---
 
 <a href={href}>
@@ -20,9 +19,7 @@ const href = `/categories/${category}`
     padding: 0.25rem 0.75rem;
     text-decoration: none;
     text-align: center;
-    transition-property: color;
-    transition-duration: var(--duration-default);
-    transition-timing-function: var(--ease-in-out);
+    transition: color var(--duration-default) var(--ease-in-out);
   }
 
   .background {

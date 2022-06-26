@@ -3,18 +3,24 @@ import HeaderItem from './header-item.astro'
 import Logo from './logo.astro'
 import MenuButton from './menu-button'
 import ThemeButton from './theme-button'
+
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props as Props
 ---
 
-<div class='wrapper'>
+<div class:list={['wrapper', className]}>
   <div class='container content-spacing content-sizing'>
     <a href='/' aria-label='Home link'>
       <Logo class='logo' />
     </a>
     <div class='items'>
       <div class='header-items'>
-        <HeaderItem href='/posts'>Posts</HeaderItem>
-        <HeaderItem href='/categories'>Categories</HeaderItem>
-        <HeaderItem href='/about'>About me ❤️</HeaderItem>
+        <HeaderItem href='/posts/'>Posts</HeaderItem>
+        <HeaderItem href='/categories/'>Categories</HeaderItem>
+        <HeaderItem href='/about/'>About me ❤️</HeaderItem>
       </div>
       <ThemeButton client:load />
     </div>
@@ -23,17 +29,14 @@ import ThemeButton from './theme-button'
 </div>
 
 <style lang='scss'>
-  @use 'src/styles/abstracts/mixins' as *;
+  @use 'src/styles/mixins' as *;
 
   .wrapper {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: var(--shadow-sm);
     background-color: var(--color-page-background);
-    transition: background-color;
-    transition-duration: var(--duration-default);
-    transition-timing-function: var(--ease-in-out);
+    transition: background-color var(--duration-default) var(--ease-in-out);
   }
 
   .container {

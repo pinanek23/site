@@ -1,7 +1,7 @@
 import { createSignal, onCleanup, onMount, For, type Component } from 'solid-js'
 import classnames from 'clsx'
 import type { PostHeaders } from '@/types/post'
-import Styles from './table-of-content.module.scss'
+import Styles from './table-of-contents.module.scss'
 
 interface Props {
   headers: PostHeaders
@@ -46,21 +46,24 @@ const TableOfContent: Component<Props> = (props) => {
 
   return (
     <div class={classnames(Styles.main, props.class)}>
-      <For each={props.headers}>
-        {({ depth, text, slug }) => (
-          <a
-            class={classnames(
-              Styles.item,
-              currentHeading() === slug && Styles.selected,
-              depth === 3 && Styles.level3,
-              depth === 4 && Styles.level4
-            )}
-            href={`#${slug}`}
-          >
-            {text}
-          </a>
-        )}
-      </For>
+      <h2>Table of Contents</h2>
+      <nav class={Styles.nav}>
+        <For each={props.headers}>
+          {({ depth, text, slug }) => (
+            <a
+              class={classnames(
+                Styles.item,
+                currentHeading() === slug && Styles.selected,
+                depth === 3 && Styles.level3,
+                depth === 4 && Styles.level4
+              )}
+              href={`#${slug}`}
+            >
+              {text}
+            </a>
+          )}
+        </For>
+      </nav>
     </div>
   )
 }

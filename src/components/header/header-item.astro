@@ -1,5 +1,5 @@
 ---
-export interface Props {
+interface Props {
   href: string
 }
 
@@ -14,9 +14,7 @@ const { href } = Astro.props as Props
   a {
     text-decoration: none;
     color: var(--color-text-default);
-    font-size: 1.05rem;
-    transition-property: color;
-    transition-duration: var(--duration-default);
-    transition-timing-function: var(--ease-in-out);
+    font-size: 1.03rem;
+    transition: color var(--duration-default) var(--ease-in-out);
   }
 </style>

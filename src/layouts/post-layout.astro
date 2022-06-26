@@ -1,36 +1,33 @@
 ---
-import TableOfContent from '@/components/post/table-of-content'
+import TableOfContents from '@/components/post/table-of-contents'
 import PostHeader from '@/components/post/post-header.astro'
-import PostContent from '@/components/post/post-content.astro'
 import type { PostFrontMatter, PostHeaders } from '@/types/post'
+import '@/styles/prose.scss'
 
-export interface Props extends PostFrontMatter {
+interface Props extends PostFrontMatter {
   headers?: PostHeaders
 }
 
 const { headers, ...fronmatter } = Astro.props as Props
-
 const isTocEnabled = headers !== undefined
 ---
 
 <div class:list={['container', 'content-spacing', isTocEnabled ? ['content-sizing'] : 'container-without-toc']}>
   <PostHeader {...fronmatter} />
   <div class:list={['content-container', isTocEnabled && 'content-container-with-toc']}>
-    {isTocEnabled && <TableOfContent client:load headers={headers} class="toc" />}
-    <PostContent class='content'>
+    {isTocEnabled && <TableOfContents client:load headers={headers} class="toc" />}
+    <article class='post-content' id='post-content'>
       <slot></slot>
-    </PostContent>
+    </article>
   </div>
 </div>
 
 <style lang='scss'>
-  @use 'src/styles/abstracts/mixins' as *;
+  @use 'src/styles/mixins' as *;
 
   .container {
     margin-top: 3rem;
     margin-bottom: 3rem;
-
-    --paragraph-line-height: calc(1em + 0.75rem);
   }
 
   .container-without-toc {
@@ -60,7 +57,7 @@ const isTocEnabled = headers !== undefined
     margin-top: 1.75rem;
   }
 
-  .content {
+  article {
     width: 100%;
     min-width: 0;
   }

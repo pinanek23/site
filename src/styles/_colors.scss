@@ -1,0 +1,61 @@
+:root {
+  color-scheme: light;
+
+  /* Page */
+  --color-page-background: #ffffff;
+
+  /* Text */
+  --color-text-default: #1a1a1a;
+  --color-text-inverse: #ffffff;
+
+  --color-text-select-background: #3488e2;
+
+  /* Accent */
+  --color-accent-default: #006adc;
+
+  /* Statuses */
+  --color-critical-default: #ef233c;
+
+  /* Category */
+  --color-category-item-background: #e6f2ff;
+
+  /* Content */
+  --color-blockquote-border: #e5e4e9;
+  --color-inline-code-background: #ecebf0;
+
+  /* Table of contents */
+  --color-toc-item-default: #5a5a5a;
+  --color-toc-item-secondary: #1a1a1a;
+  --color-toc-item-tertiary: #000000;
+}
+
+:root.color-mode-dark {
+  color-scheme: dark;
+
+  /* Page */
+  --color-page-background: #1a1a1a;
+
+  /* Text */
+  --color-text-default: #f3f5f7;
+  --color-text-inverse: #1a1a1a;
+
+  --color-text-select-background: #cce5ff;
+
+  /* Accent */
+  --color-accent-default: #cce5ff;
+
+  /* Statuses */
+  --color-critical-default: #f68895;
+
+  /* Category */
+  --color-category-item-background: #1e2731;
+
+  // Content
+  --color-blockquote-border: #363636;
+  --color-inline-code-background: #282828;
+
+  /* Table of contents */
+  --color-toc-item-default: #d3d5d7;
+  --color-toc-item-secondary: #f3f5f7;
+  --color-toc-item-tertiary: #ffffff;
+}

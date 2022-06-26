@@ -7,39 +7,32 @@ import type { Post, PostFrontMatter, PostHeaders } from '@/types/post'
 export async function getStaticPaths() {
   const posts = await Astro.glob<PostFrontMatter>('/data/posts/{*,**/index}.md')
 
-  const data = await Promise.all(
-    posts.map(async (post) => {
-      const { Content, frontmatter, file } = post
+  const postsData = posts.map(async ({ Content, frontmatter, file, getHeaders }) => {
+    const slug = file
+      .replace(/\/index.md$/, '')
+      .split(/[/\\]/)
+      .pop()
 
-      const slug = file
-        .replace(/\/index.md$/, '')
-        .split(/[/\\]/)
-        .pop()
+    const headers = frontmatter.isEnablingToc === false ? undefined : await getHeaders()
 
-      const headers = frontmatter.isEnablingToc === false ? undefined : await post.getHeaders()
+    // Resolve frontmatter image
+    const dirName = path.dirname(file)
+    const image = {
+      url: path.join(dirName.substring(dirName.search(/\/data\/[\w-/]+$/)), frontmatter.image.url),
+      alt: frontmatter.image.alt
+    }
 
-      // Resolve frontmatter image
-      const dirName = path.dirname(file)
-      const image = {
-        url: path.join(dirName.substring(dirName.search(/\/data\/[\w-/]+$/)), frontmatter.image.url),
-        alt: frontmatter.image.alt
+    return {
+      params: { slug },
+      props: {
+        Content,
+        frontmatter: { ...frontmatter, image },
+        headers
       }
+    }
+  })
 
-      return {
-        params: { slug },
-        props: {
-          Content,
-          frontmatter: {
-            ...frontmatter,
-            image
-          },
-          headers
-        }
-      }
-    })
-  )
-
-  return data
+  return Promise.all(postsData)
 }
 
 interface Props extends Pick<Post, 'Content' | 'frontmatter'> {

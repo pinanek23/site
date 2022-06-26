@@ -1,25 +1,21 @@
 ---
-import HeadSEO, { type Props as HeadSEOProps } from '@/components/head/head-seo.astro'
-import HeadCommon from '@/components/head/head-common.astro'
+import BaseLayout, { type Props as BaseLayoutProps } from './base-layout.astro'
 import Header from '@/components/header/header.astro'
-import '@/styles/global.scss'
 
-export interface Props {
-  head?: HeadSEOProps
-}
+type Props = BaseLayoutProps
 
 const { head } = Astro.props as Props
 ---
 
-<html lang='en'>
-  <head>
-    <HeadCommon />
-    <HeadSEO {...head} />
-  </head>
-  <body>
-    <div id='__root'>
-      <Header />
-      <slot></slot>
-    </div>
-  </body>
-</html>
+<BaseLayout head={head}>
+  <Header class='header' />
+  <main>
+    <slot></slot>
+  </main>
+</BaseLayout>
+
+<style lang='scss'>
+  .header {
+    box-shadow: var(--shadow-sm);
+  }
+</style>

@@ -1,5 +1,5 @@
 ---
-export interface Props {
+interface Props {
   class?: string
 }
 
@@ -58,9 +58,7 @@ const { class: className } = Astro.props as Props
 
   svg path {
     stroke-width: 4;
-    transition-property: stroke;
-    transition-duration: var(--duration-default);
-    transition-timing-function: var(--ease-in-out);
+    transition: stroke var(--duration-default) var(--ease-in-out);
 
     &:not(.dot) {
       stroke: var(--color-accent-default);
