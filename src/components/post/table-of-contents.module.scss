@@ -18,23 +18,27 @@
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
 }
 
 .item {
   color: var(--color-toc-item-default);
   text-decoration: none;
   font-size: 0.9125rem;
-  transition-property: color, font-weight;
+  padding: 0.125rem 1rem;
+  border-radius: var(--radii-sm);
+  background-color: var(--color-toc-item-background-default);
+  transition-property: color, background-color, font-weight;
   transition-duration: var(--duration-default);
   transition-timing-function: var(--ease-in-out);
 
   &:hover {
     color: var(--color-toc-item-secondary);
+    background-color: var(--color-toc-item-background-secondary);
   }
 
   &:active {
     color: var(--color-toc-item-tertiary);
+    background-color: var(--color-toc-item-background-tertiary);
   }
 }
 
@@ -42,13 +46,22 @@
   @include responsive(lg) {
     color: var(--color-accent-default);
     font-weight: var(--font-weight-semi);
+    background-color: var(--color-toc-item-background-secondary);
+  }
+
+  &:hover {
+    color: var(--color-accent-default);
+  }
+
+  &:active {
+    color: var(--color-accent-default);
   }
 }
 
 .level3 {
-  padding-left: 0.75rem;
+  padding-left: 1.75rem;
 }
 
 .level4 {
-  padding-left: 1.5rem;
+  padding-left: 2.5rem;
 }

@@ -18,7 +18,7 @@ const TableOfContent: Component<Props> = (props) => {
 
     const setCurrent: IntersectionObserverCallback = (entries) => {
       for (const entry of entries) {
-        if (entry.isIntersecting && entry.intersectionRatio === 1) {
+        if (entry.isIntersecting) {
           setCurrentHeading(entry.target.id)
           break
         }
