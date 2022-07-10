@@ -1,5 +1,6 @@
 ---
 import BaseLayout, { type Props as BaseLayoutProps } from './base-layout.astro'
+import Header from '@/components/header/header.astro'
 
 type Props = BaseLayoutProps
 
@@ -7,7 +8,22 @@ const { head } = Astro.props as Props
 ---
 
 <BaseLayout head={head}>
+  <div class='header-top-spacing'></div>
+  <Header />
+  <div class='header-bottom-spacing'></div>
   <main>
     <slot></slot>
   </main>
 </BaseLayout>
+
+<style lang='scss'>
+  @use 'src/styles/tokens' as *;
+
+  .header-top-spacing {
+    height: $spacing-16;
+  }
+
+  .header-bottom-spacing {
+    height: $spacing-12;
+  }
+</style>

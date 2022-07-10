@@ -7,6 +7,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.30.5
   astro: ^1.0.0-beta.65
   astro-eslint-parser: ^0.4.0
+  clsx: ^1.2.1
   eslint: ^8.19.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-astro: ^0.15.0
@@ -26,6 +27,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.30.5_4x5o4skxv6sl53vpwefgt23khm
   astro: 1.0.0-beta.65_sass@1.53.0
   astro-eslint-parser: 0.4.0
+  clsx: 1.2.1
   eslint: 8.19.0
   eslint-config-prettier: 8.5.0_eslint@8.19.0
   eslint-plugin-astro: 0.15.0_eslint@8.19.0
@@ -1234,6 +1236,11 @@ packages:
   /clone/1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
+    dev: true
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
     dev: true
 
   /color-convert/1.9.3:

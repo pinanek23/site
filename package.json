@@ -19,6 +19,7 @@
     "@typescript-eslint/parser": "^5.30.5",
     "astro": "^1.0.0-beta.65",
     "astro-eslint-parser": "^0.4.0",
+    "clsx": "^1.2.1",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-astro": "^0.15.0",
