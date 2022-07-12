@@ -15,9 +15,9 @@
   "devDependencies": {
     "@astrojs/solid-js": "^0.2.1",
     "@babel/core": "^7.18.6",
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
-    "@typescript-eslint/parser": "^5.30.5",
-    "astro": "^1.0.0-beta.65",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "astro": "^1.0.0-beta.66",
     "astro-eslint-parser": "^0.4.0",
     "clsx": "^1.2.1",
     "eslint": "^8.19.0",
