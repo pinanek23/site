@@ -5,7 +5,7 @@ import ThemeButton from './theme-button'
 import MenuButton from './menu-button'
 ---
 
-<div>
+<div class='wrapper'>
   <div class='page-sizing page-spacing container'>
     <a href='/' class='logo' aria-label='Go to home'>
       <Logo />
@@ -27,11 +27,21 @@ import MenuButton from './menu-button'
 <style lang='scss'>
   @use 'src/styles/tokens' as *;
 
+  .wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-page-background);
+    transition: background-color $duration-default $ease-in-out;
+  }
+
   .container {
     display: flex;
     justify-content: space-between;
     gap: $spacing-6;
     flex-wrap: wrap;
+    padding-top: $spacing-6;
+    padding-bottom: $spacing-6;
 
     @media ($breakpoint-md) {
       gap: $spacing-12;
