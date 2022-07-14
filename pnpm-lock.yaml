@@ -5,8 +5,8 @@ specifiers:
   '@babel/core': ^7.18.6
   '@typescript-eslint/eslint-plugin': ^5.30.6
   '@typescript-eslint/parser': ^5.30.6
-  astro: ^1.0.0-beta.69
-  astro-eslint-parser: ^0.4.0
+  astro: ^1.0.0-beta.70
+  astro-eslint-parser: ^0.4.1
   clsx: ^1.2.1
   eslint: ^8.19.0
   eslint-config-prettier: ^8.5.0
@@ -25,8 +25,8 @@ devDependencies:
   '@babel/core': 7.18.6
   '@typescript-eslint/eslint-plugin': 5.30.6_2vt5mtrqleafs33qg2bhpmbaqm
   '@typescript-eslint/parser': 5.30.6_4x5o4skxv6sl53vpwefgt23khm
-  astro: 1.0.0-beta.69_sass@1.53.0
-  astro-eslint-parser: 0.4.0
+  astro: 1.0.0-beta.70_sass@1.53.0
+  astro-eslint-parser: 0.4.1
   clsx: 1.2.1
   eslint: 8.19.0
   eslint-config-prettier: 8.5.0_eslint@8.19.0
@@ -61,6 +61,10 @@ packages:
     resolution: {integrity: sha512-R2lOpaif3hDju2/sE6OrKvnTMgrcLRJw+jAVih9pLA2ATgy2EnhYMhflRk1vQ6+YwuhyL6Lj/dRJFXgB7r70eg==}
     dev: true
 
+  /@astrojs/compiler/0.19.0:
+    resolution: {integrity: sha512-8nvyxZTfCXLyRmYfTttpJT6EPhfBRg0/q4J/Jj3/pNPLzp+vs05ZdktsY6QxAREaOMAnNEtSqcrB4S5DsXOfRg==}
+    dev: true
+
   /@astrojs/language-server/0.13.4:
     resolution: {integrity: sha512-xWtzZMEVsEZkRLlHMKiOoQIXyQwdMkBPHsRcO1IbzpCmaMQGfKKYNANJ1FKZSHsybbXG/BBaB+LqgVPFNFufew==}
     hasBin: true
@@ -73,17 +77,17 @@ packages:
       vscode-css-languageservice: 5.4.2
       vscode-html-languageservice: 4.2.5
       vscode-languageserver: 7.0.0
-      vscode-languageserver-protocol: 3.17.1
+      vscode-languageserver-protocol: 3.17.2
       vscode-languageserver-textdocument: 1.0.5
-      vscode-languageserver-types: 3.17.1
+      vscode-languageserver-types: 3.17.2
       vscode-uri: 3.0.3
     dev: true
 
-  /@astrojs/markdown-remark/0.11.5:
-    resolution: {integrity: sha512-4ExntdcjCMEhy7JYoEYlHix945OffDvEfl0PXGUv6mdSosFaqtucrq+dU0FuK1BFYesslk8d9kLQEjrie1zb0w==}
+  /@astrojs/markdown-remark/0.11.6:
+    resolution: {integrity: sha512-UOhUWCn7ODUq+W9w6dPASzLQHBvuQuo0ZirC10Rhh3T34b2pOlrFhFKgUnlLnFEN8BQaR3P4oassk+OQwLGrKg==}
     dependencies:
       '@astrojs/micromark-extension-mdx-jsx': 1.0.3
-      '@astrojs/prism': 0.5.0
+      '@astrojs/prism': 0.6.0
       acorn: 8.7.1
       acorn-jsx: 5.3.2_acorn@8.7.1
       assert: 2.0.0
@@ -124,9 +128,9 @@ packages:
       vfile-message: 3.1.2
     dev: true
 
-  /@astrojs/prism/0.5.0:
-    resolution: {integrity: sha512-KarhC/wAP5BufY8iEcYPYfe3sW5YkM8Ht3YfE/GAnidJZaTHzrTqjSgVbrPYTgjkoTwIx+GU7Sxwx1v2p4irAA==}
-    engines: {node: ^14.20.0 || >=16.16.0}
+  /@astrojs/prism/0.6.0:
+    resolution: {integrity: sha512-aHho3xNaJbys8KzkoyWOiwXwYwTBSe/RBflUolxEtHdNi8ibM0K3U20M6/SnamHnk6m78aEHQ4oHWFHI1wYUhw==}
+    engines: {node: ^14.20.0 || >=16.14.0}
     dev: true
 
   /@astrojs/solid-js/0.3.1_3czbc23nqkmh4e66ssbg3l5ccy:
@@ -150,9 +154,9 @@ packages:
       - typescript
     dev: true
 
-  /@astrojs/telemetry/0.3.1:
-    resolution: {integrity: sha512-MiuLAMGJ7Z8Q6Sv0SLfFG87qSYLtCRQqYafStuEKUhyYDT0LcwqS/P8EZWap2uA/4OmgCwwzTHa+uuOFrLoLvA==}
-    engines: {node: ^14.20.0 || >=16.16.0}
+  /@astrojs/telemetry/0.4.0:
+    resolution: {integrity: sha512-fsriHsaSKN2XEq/WlKM3A7vDZEdAwxUqlAbH0VJxLJ1VO0kqi5FQiuUUXhekUw0kExgkAddng0FyX03ZWSQF/g==}
+    engines: {node: ^14.20.0 || >=16.14.0}
     dependencies:
       ci-info: 3.3.2
       debug: 4.3.4
@@ -232,7 +236,7 @@ packages:
       '@babel/compat-data': 7.18.8
       '@babel/core': 7.18.6
       '@babel/helper-validator-option': 7.18.6
-      browserslist: 4.21.1
+      browserslist: 4.21.2
       semver: 6.3.0
     dev: true
 
@@ -764,7 +768,7 @@ packages:
       emmet: 2.3.6
       jsonc-parser: 2.3.1
       vscode-languageserver-textdocument: 1.0.5
-      vscode-languageserver-types: 3.17.1
+      vscode-languageserver-types: 3.17.2
       vscode-nls: 5.0.1
       vscode-uri: 2.1.2
     dev: true
@@ -913,11 +917,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /astro-eslint-parser/0.4.0:
-    resolution: {integrity: sha512-xyQE4l/4rVTbXj8wmmC8ep58Rb7OVPOw8JWcSrgZz/H/RsoKjFK64e6C8OU5CG3KLNsJ0F4Br4HUfR4RbRZz4A==}
+  /astro-eslint-parser/0.4.1:
+    resolution: {integrity: sha512-3LrGRjjycM5/Dumw/mqwIE02aCh54j+lYgAFcsdoFLq+Tm+8n52Fcyxrwic6xAlPmLk3rodwFJe7miaa+fiNfw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     dependencies:
-      '@astrojs/compiler': 0.18.2
+      '@astrojs/compiler': 0.19.0
       '@typescript-eslint/types': 5.30.6
       debug: 4.3.4
       eslint-visitor-keys: 3.3.0
@@ -929,16 +933,16 @@ packages:
       - supports-color
     dev: true
 
-  /astro/1.0.0-beta.69_sass@1.53.0:
-    resolution: {integrity: sha512-+9g7U4W/lTJY+Nud7wHdZVaGicyl38FywlgSXW0poFkZOlvk6um9Sg+0r/MvOjWrNqNbfe1sJQZaXhsjFhpPOw==}
-    engines: {node: ^14.20.0 || >=16.16.0, npm: '>=6.14.0'}
+  /astro/1.0.0-beta.70_sass@1.53.0:
+    resolution: {integrity: sha512-P3fgn6bv5lEcLj3LZ3b+5z6TC5eni93q4m5Y2Mn45/gKIr0Bb/1le3eqGcRfjp0bpKpaDomBufiOPWZjWnIBUg==}
+    engines: {node: ^14.20.0 || >=16.14.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
       '@astrojs/compiler': 0.18.2
       '@astrojs/language-server': 0.13.4
-      '@astrojs/markdown-remark': 0.11.5
-      '@astrojs/prism': 0.5.0
-      '@astrojs/telemetry': 0.3.1
+      '@astrojs/markdown-remark': 0.11.6
+      '@astrojs/prism': 0.6.0
+      '@astrojs/telemetry': 0.4.0
       '@astrojs/webapi': 0.12.0
       '@babel/core': 7.18.6
       '@babel/generator': 7.18.7
@@ -1004,9 +1008,9 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /axe-core/4.4.2:
-    resolution: {integrity: sha512-LVAaGp/wkkgYJcjmHsoKx4juT1aQvJyPcW09MLCjVTh3V2cc6PnyempiLMNH5iMdfIX/zdbjUx2KDjMLCTdPeA==}
-    engines: {node: '>=12'}
+  /axe-core/4.4.3:
+    resolution: {integrity: sha512-32+ub6kkdhhWick/UjvEwRchgoetXqTK14INLqbGm5U2TzBkBNF3nQtLYm8ovxSkQWArjEQvftCKryjZaATu3w==}
+    engines: {node: '>=4'}
     dev: true
 
   /axobject-query/2.2.0:
@@ -1087,15 +1091,15 @@ packages:
       fill-range: 7.0.1
     dev: true
 
-  /browserslist/4.21.1:
-    resolution: {integrity: sha512-Nq8MFCSrnJXSc88yliwlzQe3qNe3VntIjhsArW9IJOEPSHNx23FalwApUVbzAWABLhYJJ7y8AynWI/XM8OdfjQ==}
+  /browserslist/4.21.2:
+    resolution: {integrity: sha512-MonuOgAtUB46uP5CezYbRaYKBNt2LxP0yX+Pmj4LkcDFGkn9Cbpi83d9sCjwQDErXsIJSzY5oKGDbgOlF/LPAA==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001366
-      electron-to-chromium: 1.4.187
+      electron-to-chromium: 1.4.189
       node-releases: 2.0.6
-      update-browserslist-db: 1.0.4_browserslist@4.21.1
+      update-browserslist-db: 1.0.4_browserslist@4.21.2
     dev: true
 
   /buffer/6.0.3:
@@ -1406,8 +1410,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium/1.4.187:
-    resolution: {integrity: sha512-t3iFLHVIMhB8jGZ+8ui951nz6Bna5qKfhxezG3wzXdBJ79qFKPsE2chjjVFNqC1ewhfrPQrw9pmVeo4FFpZeQA==}
+  /electron-to-chromium/1.4.189:
+    resolution: {integrity: sha512-dQ6Zn4ll2NofGtxPXaDfY2laIa6NyCQdqXYHdwH90GJQW0LpJJib0ZU/ERtbb0XkBEmUD2eJtagbOie3pdMiPg==}
     dev: true
 
   /emmet/2.3.6:
@@ -1719,7 +1723,7 @@ packages:
       eslint: '>=7.0.0'
     dependencies:
       '@typescript-eslint/types': 5.30.6
-      astro-eslint-parser: 0.4.0
+      astro-eslint-parser: 0.4.1
       eslint: 8.19.0
       eslint-utils: 3.0.0_eslint@8.19.0
       postcss: 8.4.14
@@ -1739,7 +1743,7 @@ packages:
       aria-query: 4.2.2
       array-includes: 3.1.5
       ast-types-flow: 0.0.7
-      axe-core: 4.4.2
+      axe-core: 4.4.3
       axobject-query: 2.2.0
       damerau-levenshtein: 1.0.8
       emoji-regex: 9.2.2
@@ -2814,8 +2818,8 @@ packages:
       unist-util-visit: 4.1.0
     dev: true
 
-  /mdast-util-find-and-replace/2.2.0:
-    resolution: {integrity: sha512-bz8hUWkMX7UcasORORcyBEsTKJ+dBiFwRPrm43hHC9NMRylIMLbfO5rwfeCN+UtY4AAi7s8WqXftb9eX6ZsqCg==}
+  /mdast-util-find-and-replace/2.2.1:
+    resolution: {integrity: sha512-SobxkQXFAdd4b5WmEakmkVoh18icjQRxGy5OWTCzgsLRm1Fu/KCtwD1HIQSsmq5ZRjVH0Ehwg6/Fn3xIUk+nKw==}
     dependencies:
       escape-string-regexp: 5.0.0
       unist-util-is: 5.1.1
@@ -2846,7 +2850,7 @@ packages:
     dependencies:
       '@types/mdast': 3.0.10
       ccount: 2.0.1
-      mdast-util-find-and-replace: 2.2.0
+      mdast-util-find-and-replace: 2.2.1
       micromark-util-character: 1.1.0
     dev: true
 
@@ -4412,13 +4416,13 @@ packages:
       unist-util-visit-parents: 5.1.0
     dev: true
 
-  /update-browserslist-db/1.0.4_browserslist@4.21.1:
+  /update-browserslist-db/1.0.4_browserslist@4.21.2:
     resolution: {integrity: sha512-jnmO2BEGUjsMOe/Fg9u0oczOe/ppIDZPebzccl1yDWGLFP16Pa1/RM5wEoKYPG2zstNcDuAStejyxsOuKINdGA==}
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
     dependencies:
-      browserslist: 4.21.1
+      browserslist: 4.21.2
       escalade: 3.1.1
       picocolors: 1.0.0
     dev: true
@@ -4511,7 +4515,7 @@ packages:
     resolution: {integrity: sha512-DT7+7vfdT2HDNjDoXWtYJ0lVDdeDEdbMNdK4PKqUl2MS8g7PWt7J5G9B6k9lYox8nOfhCEjLnoNC3UKHHCR1lg==}
     dependencies:
       vscode-languageserver-textdocument: 1.0.5
-      vscode-languageserver-types: 3.17.1
+      vscode-languageserver-types: 3.17.2
       vscode-nls: 5.0.1
       vscode-uri: 3.0.3
     dev: true
@@ -4520,7 +4524,7 @@ packages:
     resolution: {integrity: sha512-dbr10KHabB9EaK8lI0XZW7SqOsTfrNyT3Nuj0GoPi4LjGKUmMiLtsqzfedIzRTzqY+w0FiLdh0/kQrnQ0tLxrw==}
     dependencies:
       vscode-languageserver-textdocument: 1.0.5
-      vscode-languageserver-types: 3.17.1
+      vscode-languageserver-types: 3.17.2
       vscode-nls: 5.0.1
       vscode-uri: 3.0.3
     dev: true
@@ -4530,8 +4534,8 @@ packages:
     engines: {node: '>=8.0.0 || >=10.0.0'}
     dev: true
 
-  /vscode-jsonrpc/8.0.1:
-    resolution: {integrity: sha512-N/WKvghIajmEvXpatSzvTvOIz61ZSmOSa4BRA4pTLi+1+jozquQKP/MkaylP9iB68k73Oua1feLQvH3xQuigiQ==}
+  /vscode-jsonrpc/8.0.2:
+    resolution: {integrity: sha512-RY7HwI/ydoC1Wwg4gJ3y6LpU9FJRZAUnTYMXthqhFXXu77ErDd/xkREpGuk4MyYkk4a+XDWAMqe0S3KkelYQEQ==}
     engines: {node: '>=14.0.0'}
     dev: true
 
@@ -4542,11 +4546,11 @@ packages:
       vscode-languageserver-types: 3.16.0
     dev: true
 
-  /vscode-languageserver-protocol/3.17.1:
-    resolution: {integrity: sha512-BNlAYgQoYwlSgDLJhSG+DeA8G1JyECqRzM2YO6tMmMji3Ad9Mw6AW7vnZMti90qlAKb0LqAlJfSVGEdqMMNzKg==}
+  /vscode-languageserver-protocol/3.17.2:
+    resolution: {integrity: sha512-8kYisQ3z/SQ2kyjlNeQxbkkTNmVFoQCqkmGrzLH6A9ecPlgTbp3wDTnUNqaUxYr4vlAcloxx8zwy7G5WdguYNg==}
     dependencies:
-      vscode-jsonrpc: 8.0.1
-      vscode-languageserver-types: 3.17.1
+      vscode-jsonrpc: 8.0.2
+      vscode-languageserver-types: 3.17.2
     dev: true
 
   /vscode-languageserver-textdocument/1.0.5:
@@ -4557,8 +4561,8 @@ packages:
     resolution: {integrity: sha512-k8luDIWJWyenLc5ToFQQMaSrqCHiLwyKPHKPQZ5zz21vM+vIVUSvsRpcbiECH4WR88K2XZqc4ScRcZ7nk/jbeA==}
     dev: true
 
-  /vscode-languageserver-types/3.17.1:
-    resolution: {integrity: sha512-K3HqVRPElLZVVPtMeKlsyL9aK0GxGQpvtAUTfX4k7+iJ4mc1M+JM+zQwkgGy2LzY0f0IAafe8MKqIkJrxfGGjQ==}
+  /vscode-languageserver-types/3.17.2:
+    resolution: {integrity: sha512-zHhCWatviizPIq9B7Vh9uvrH6x3sK8itC84HkamnBWoDFJtzBf7SWlpLCZUit72b3os45h6RWQNC9xHRDF8dRA==}
     dev: true
 
   /vscode-languageserver/7.0.0:
