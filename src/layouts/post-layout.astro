@@ -1,0 +1,17 @@
+---
+import BaseLayout, { type Props as BaseLayoutProps } from './base-layout.astro'
+import Header from '@/components/header/header.astro'
+
+type Props = BaseLayoutProps
+
+const { head } = Astro.props as Props
+---
+
+<BaseLayout head={head}>
+  <Header />
+  <main class='page-sizing page-spacing'>
+    <article>
+      <slot></slot>
+    </article>
+  </main>
+</BaseLayout>
