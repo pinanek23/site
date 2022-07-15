@@ -1,0 +1,22 @@
+/* Page */
+$color-page-background: (#ffffff, #1a1a1a);
+
+/* Text */
+$color-text-default: (#1a1a1a, #ededed);
+
+$colors: (
+  page-background: $color-page-background,
+  text-default: $color-text-default
+);
+
+:root {
+  @each $color, $values in $colors {
+    --color-#{$color}: #{nth($values, 1)};
+  }
+}
+
+:root.color-mode-dark {
+  @each $color, $values in $colors {
+    --color-#{$color}: #{nth($values, 2)};
+  }
+}

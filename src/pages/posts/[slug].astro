@@ -1,48 +1,35 @@
 ---
-import * as path from 'path'
-import MainLayout from '@/layouts/main-layout.astro'
 import PostLayout from '@/layouts/post-layout.astro'
-import type { Post, PostFrontMatter, PostHeaders } from '@/types/post'
+import type { GetStaticPaths } from 'astro'
+import type { Post, PostFrontMatter } from '@/types/post'
 
-export async function getStaticPaths() {
-  const posts = await Astro.glob<PostFrontMatter>('/data/posts/{*,**/index}.md')
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await Astro.glob<PostFrontMatter>('/content/posts/{*,**/index}.md')
 
-  const postsData = posts.map(async ({ Content, frontmatter, file, getHeaders }) => {
+  const data = posts.map(async ({ Content, frontmatter, file }) => {
     const slug = file
       .replace(/\/index.md$/, '')
       .split(/[/\\]/)
       .pop()
 
-    const headers = frontmatter.isEnablingToc === false ? undefined : await getHeaders()
-
-    // Resolve frontmatter image
-    const dirName = path.dirname(file)
-    const image = {
-      url: path.join(dirName.substring(dirName.search(/\/data\/[\w-/]+$/)), frontmatter.image.url),
-      alt: frontmatter.image.alt
-    }
-
     return {
       params: { slug },
       props: {
         Content,
-        frontmatter: { ...frontmatter, image },
-        headers
+        frontmatter
       }
     }
   })
 
-  return Promise.all(postsData)
+  return Promise.all(data)
 }
 
-interface Props extends Pick<Post, 'Content' | 'frontmatter'> {
-  headers?: PostHeaders
-}
+type Props = Pick<Post, 'Content' | 'frontmatter'>
 
-const { Content, headers, frontmatter } = Astro.props as Props
+const { Content, frontmatter } = Astro.props as Props
 ---
 
-<MainLayout
+<PostLayout
   head={{
     title: frontmatter.title,
     seoTitle: frontmatter.seoTitle,
@@ -51,7 +38,5 @@ const { Content, headers, frontmatter } = Astro.props as Props
     imageAlt: frontmatter.image.alt
   }}
 >
-  <PostLayout headers={headers} {...frontmatter}>
-    <Content />
-  </PostLayout>
-</MainLayout>
+  <Content />
+</PostLayout>

@@ -2,6 +2,15 @@
 <meta name='viewport' content='width=device-width, initial-scale=1' />
 
 <link rel='preload' href='/fonts/LexendDecaVariableFont.woff2' as='font' type='font/woff2' crossorigin='anonymous' />
+<style is:inline>
+  @font-face {
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('/fonts/LexendDecaVariableFont.woff2') format('woff2');
+  }
+</style>
 
 <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
 <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
@@ -11,7 +20,6 @@
 <script is:inline>
   const root = document.documentElement
   const savedColorMode = localStorage.getItem('color-mode')
-
   if (
     savedColorMode === 'dark' ||
     ((savedColorMode === 'system' || savedColorMode === undefined) &&
@@ -35,7 +43,6 @@
   function updateColorMode() {
     const savedColorMode = localStorage.getItem('color-mode') as ColorMode | undefined
     const isPreferDarkColorMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-
     if (
       savedColorMode === undefined ||
       !(savedColorMode === 'system' || savedColorMode === 'light' || savedColorMode === 'dark')

@@ -7,14 +7,35 @@ const { href } = Astro.props as Props
 ---
 
 <a href={href}>
-  <slot></slot>
+  <span><slot></slot></span>
+  <span class='indicator'></span>
 </a>
 
 <style lang='scss'>
+  @use 'src/styles/tokens' as *;
+
   a {
-    text-decoration: none;
+    position: relative;
     color: var(--color-text-default);
-    font-size: 1.03rem;
-    transition: color var(--duration-default) var(--ease-in-out);
+    font-weight: $font-weight-semi-bold;
+    text-decoration: none;
+    transition: color $duration-default $ease-in-out;
+  }
+
+  .indicator {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 3px;
+    border-radius: 1px;
+    width: 0;
+    background-color: var(--color-text-default);
+    transition-property: width, background-color;
+    transition-duration: $duration-default;
+    transition-timing-function: $ease-in-out;
+
+    a:hover & {
+      width: 100%;
+    }
   }
 </style>
